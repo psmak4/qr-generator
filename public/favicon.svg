@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
+  <rect width="100" height="100" fill="#2563eb" rx="12"/>
+  <g fill="#ffffff">
+    <!-- Top-left corner pattern -->
+    <rect x="12" y="12" width="24" height="24" rx="4"/>
+    <rect x="16" y="16" width="16" height="16" fill="#2563eb" rx="2"/>
+    <rect x="20" y="20" width="8" height="8" rx="1"/>
+    
+    <!-- Top-right corner pattern -->
+    <rect x="64" y="12" width="24" height="24" rx="4"/>
+    <rect x="68" y="16" width="16" height="16" fill="#2563eb" rx="2"/>
+    <rect x="72" y="20" width="8" height="8" rx="1"/>
+    
+    <!-- Bottom-left corner pattern -->
+    <rect x="12" y="64" width="24" height="24" rx="4"/>
+    <rect x="16" y="68" width="16" height="16" fill="#2563eb" rx="2"/>
+    <rect x="20" y="72" width="8" height="8" rx="1"/>
+    
+    <!-- Center data dots -->
+    <rect x="44" y="12" width="8" height="8" rx="1"/>
+    <rect x="44" y="28" width="8" height="8" rx="1"/>
+    <rect x="44" y="44" width="12" height="12" rx="2"/>
+    <rect x="12" y="44" width="8" height="8" rx="1"/>
+    <rect x="28" y="44" width="8" height="8" rx="1"/>
+    <rect x="64" y="44" width="8" height="8" rx="1"/>
+    <rect x="80" y="44" width="8" height="8" rx="1"/>
+    <rect x="64" y="64" width="8" height="8" rx="1"/>
+    <rect x="80" y="64" width="8" height="8" rx="1"/>
+    <rect x="64" y="80" width="8" height="8" rx="1"/>
+    <rect x="80" y="80" width="8" height="8" rx="1"/>
+    <rect x="44" y="64" width="8" height="8" rx="1"/>
+    <rect x="44" y="80" width="8" height="8" rx="1"/>
+  </g>
+</svg>
