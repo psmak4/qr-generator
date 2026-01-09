@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function PrivacyPolicyPage() {
   const lastUpdated = 'January 9, 2026';
@@ -488,19 +490,19 @@ export default function PrivacyPolicyPage() {
             </h2>
             <div className="mt-4 space-y-3">
               <p className="flex items-start gap-2">
-                <span className="text-green-500">✅</span>
+                <FontAwesomeIcon icon={faCheck} className="mt-1 h-4 w-4 text-green-500 shrink-0" aria-hidden="true" />
                 <span><strong>Your QR code data is completely private</strong> – we never see it, store it, or transmit it. Everything happens locally in your browser.</span>
               </p>
               <p className="flex items-start gap-2">
-                <span className="text-green-500">✅</span>
+                <FontAwesomeIcon icon={faCheck} className="mt-1 h-4 w-4 text-green-500 shrink-0" aria-hidden="true" />
                 <span><strong>Advertising keeps us free</strong> – we use third-party ads (primarily Google AdSense) to support this free service. These ads use cookies and may collect browsing information.</span>
               </p>
               <p className="flex items-start gap-2">
-                <span className="text-green-500">✅</span>
+                <FontAwesomeIcon icon={faCheck} className="mt-1 h-4 w-4 text-green-500 shrink-0" aria-hidden="true" />
                 <span><strong>You have choices</strong> – you can opt out of personalized advertising through the links provided above.</span>
               </p>
               <p className="flex items-start gap-2">
-                <span className="text-green-500">✅</span>
+                <FontAwesomeIcon icon={faCheck} className="mt-1 h-4 w-4 text-green-500 shrink-0" aria-hidden="true" />
                 <span><strong>We're transparent</strong> – this policy clearly explains what we do and don't collect.</span>
               </p>
             </div>
