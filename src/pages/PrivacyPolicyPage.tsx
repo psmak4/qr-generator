@@ -467,8 +467,7 @@ export default function PrivacyPolicyPage() {
               If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:
             </p>
             <ul className="mt-4 list-disc pl-6 space-y-2">
-              <li><strong>Email</strong>: [your-email@example.com]</li>
-              <li><strong>GitHub Issues</strong>: <a href="https://github.com/psmak4/qr-generator/issues" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://github.com/psmak4/qr-generator/issues</a></li>
+              <li><strong>Email</strong>: psmak4@gmail.com</li>
               <li><strong>Website</strong>: <a href="https://thebestqrgenerator.com" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://thebestqrgenerator.com</a></li>
             </ul>
             <p className="mt-6 font-medium text-(--color-text-primary)">
