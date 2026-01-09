@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
               Overview
             </h2>
             <p>
-              QR Generator ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how our free QR code generator handles information when you use our service.
+              The Best QR Generator ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how our free QR code generator handles information when you use our service.
             </p>
             <p>
               <strong className="text-(--color-text-primary)">
