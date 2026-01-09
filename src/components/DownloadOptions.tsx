@@ -48,20 +48,20 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
 
   return (
     <div className="space-y-6">
-      <h3 className="text-lg font-medium text-[var(--color-text-primary)]">
+      <h3 className="text-lg font-medium text-(--color-text-primary)">
         Download QR Code
       </h3>
 
       {/* PNG Download */}
       <div className="space-y-2">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-medium text-[var(--color-text-secondary)] w-12">
+          <span className="text-sm font-medium text-(--color-text-secondary) w-12">
             PNG
           </span>
           <select
             value={selectedPngRes}
             onChange={(e) => setSelectedPngRes(Number(e.target.value) as PNGResolution)}
-            className="rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-2 text-sm text-[var(--color-text-primary)]"
+            className="rounded-lg border border-(--color-border) bg-(--color-background) px-3 py-2 text-sm text-(--color-text-primary)"
             disabled={!isValid}
           >
             {PNG_RESOLUTIONS.map((res) => (
@@ -83,10 +83,10 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
       {/* SVG Download */}
       <div className="space-y-2">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-medium text-[var(--color-text-secondary)] w-12">
+          <span className="text-sm font-medium text-(--color-text-secondary) w-12">
             SVG
           </span>
-          <span className="text-xs text-[var(--color-text-muted)]">
+          <span className="text-xs text-(--color-text-muted)">
             Scalable vector format
           </span>
           <button
@@ -102,13 +102,13 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
       {/* JPG Download */}
       <div className="space-y-2">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-medium text-[var(--color-text-secondary)] w-12">
+          <span className="text-sm font-medium text-(--color-text-secondary) w-12">
             JPG
           </span>
           <select
             value={selectedJpgRes}
             onChange={(e) => setSelectedJpgRes(Number(e.target.value) as JPGResolution)}
-            className="rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-2 text-sm text-[var(--color-text-primary)]"
+            className="rounded-lg border border-(--color-border) bg-(--color-background) px-3 py-2 text-sm text-(--color-text-primary)"
             disabled={!isValid}
           >
             {JPG_RESOLUTIONS.map((res) => (
@@ -130,10 +130,10 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
       {/* PDF Download */}
       <div className="space-y-2">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-medium text-[var(--color-text-secondary)] w-12">
+          <span className="text-sm font-medium text-(--color-text-secondary) w-12">
             PDF
           </span>
-          <span className="text-xs text-[var(--color-text-muted)]">
+          <span className="text-xs text-(--color-text-muted)">
             Print-ready A4 document
           </span>
           <button
@@ -147,7 +147,7 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
       </div>
 
       {/* Divider */}
-      <hr className="border-[var(--color-border)]" />
+      <hr className="border-(--color-border)" />
 
       {/* Download All */}
       <button

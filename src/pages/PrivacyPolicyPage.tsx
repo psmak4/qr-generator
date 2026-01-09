@@ -8,23 +8,23 @@ export default function PrivacyPolicyPage() {
       <div className="mb-8">
         <Link
           to="/"
-          className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] no-underline"
+          className="text-sm text-(--color-text-secondary) hover:text-(--color-text-primary) no-underline"
         >
           ← Back to Generator
         </Link>
       </div>
 
       <article className="prose prose-slate dark:prose-invert max-w-none">
-        <h1 className="text-3xl font-bold text-[var(--color-text-primary)]">
+        <h1 className="text-3xl font-bold text-(--color-text-primary)">
           Privacy Policy
         </h1>
-        <p className="text-sm text-[var(--color-text-muted)]">
+        <p className="text-sm text-(--color-text-muted)">
           Last updated: {lastUpdated}
         </p>
 
-        <div className="mt-8 space-y-8 text-[var(--color-text-secondary)]">
+        <div className="mt-8 space-y-8 text-(--color-text-secondary)">
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Overview
             </h2>
             <p>
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
               when you use our service.
             </p>
             <p>
-              <strong className="text-[var(--color-text-primary)]">
+              <strong className="text-(--color-text-primary)">
                 The short version: We don't collect, store, or transmit any of your data. 
                 Everything happens locally in your browser.
               </strong>
@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Information We Don't Collect
             </h2>
             <p>
@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               How Our Service Works
             </h2>
             <p>
@@ -77,7 +77,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Local Storage
             </h2>
             <p>
@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Third-Party Services
             </h2>
             <p>
@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Security
             </h2>
             <p>
@@ -121,7 +121,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Children's Privacy
             </h2>
             <p>
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Changes to This Policy
             </h2>
             <p>
@@ -143,7 +143,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Contact Us
             </h2>
             <p>
@@ -152,8 +152,8 @@ export default function PrivacyPolicyPage() {
             </p>
           </section>
 
-          <section className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+          <section className="rounded-lg border border-(--color-border) bg-(--color-surface) p-6">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Summary
             </h2>
             <p className="mb-0">

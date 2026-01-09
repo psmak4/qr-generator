@@ -80,10 +80,10 @@ export default function HomePage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Page Header */}
       <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-[var(--color-text-primary)] sm:text-4xl">
-          Free QR Code Generator
+        <h1 className="text-3xl font-bold text-(--color-text-primary) sm:text-4xl">
+          The Best QR Code Generator
         </h1>
-        <p className="mt-2 text-[var(--color-text-secondary)]">
+        <p className="mt-2 text-(--color-text-secondary)">
           Generate QR codes for URLs, text, contacts, WiFi, and more. No signup required.
         </p>
       </div>
@@ -93,7 +93,7 @@ export default function HomePage() {
         {/* Left Panel - Input Form */}
         <div className="space-y-6">
           {/* Type Selector */}
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] p-6">
+          <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6">
             <QRTypeSelector
               selectedType={selectedType}
               onTypeChange={handleTypeChange}
@@ -101,14 +101,14 @@ export default function HomePage() {
           </div>
 
           {/* Form Fields */}
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] p-6">
+          <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-lg font-medium text-[var(--color-text-primary)]">
+              <h2 className="text-lg font-medium text-(--color-text-primary)">
                 Enter Information
               </h2>
               <button
                 onClick={handleReset}
-                className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+                className="text-sm text-(--color-text-secondary) hover:text-(--color-text-primary)"
               >
                 Reset
               </button>
@@ -125,15 +125,15 @@ export default function HomePage() {
         {/* Right Panel - Preview and Download */}
         <div className="space-y-6">
           {/* QR Code Preview */}
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] p-6">
-            <h2 className="mb-4 text-lg font-medium text-[var(--color-text-primary)]">
+          <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6">
+            <h2 className="mb-4 text-lg font-medium text-(--color-text-primary)">
               Preview
             </h2>
             <QRPreview data={qrData} isValid={isValid} />
           </div>
 
           {/* Download Options */}
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] p-6">
+          <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6">
             <DownloadOptions qrData={qrData} isValid={isValid} />
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function HomePage() {
 
       {/* Features Section */}
       <div className="mt-16">
-        <h2 className="mb-8 text-center text-2xl font-bold text-[var(--color-text-primary)]">
+        <h2 className="mb-8 text-center text-2xl font-bold text-(--color-text-primary)">
           Why Use Our QR Generator?
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -179,14 +179,14 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 text-center">
+    <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6 text-center">
       <FontAwesomeIcon 
         icon={icon} 
-        className="mb-3 h-8 w-8 text-[var(--color-primary)]" 
+        className="mb-3 h-8 w-8 text-(--color-primary)" 
         aria-hidden="true" 
       />
-      <h3 className="mb-2 font-medium text-[var(--color-text-primary)]">{title}</h3>
-      <p className="text-sm text-[var(--color-text-secondary)]">{description}</p>
+      <h3 className="mb-2 font-medium text-(--color-text-primary)">{title}</h3>
+      <p className="text-sm text-(--color-text-secondary)">{description}</p>
     </div>
   );
 }

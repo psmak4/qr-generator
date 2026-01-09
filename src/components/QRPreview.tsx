@@ -38,10 +38,10 @@ export default function QRPreview({ data, isValid }: QRPreviewProps) {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="relative flex h-64 w-64 items-center justify-center rounded-lg border border-[var(--color-border)] bg-white sm:h-72 sm:w-72">
+      <div className="relative flex h-64 w-64 items-center justify-center rounded-lg border border-(--color-border) bg-white sm:h-72 sm:w-72">
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-white/80">
-            <div className="h-8 w-8 animate-spin rounded-full border-2 border-[var(--color-border)] border-t-[var(--color-primary)]" />
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-(--color-border) border-t-(--color-primary)" />
           </div>
         )}
         
@@ -53,8 +53,8 @@ export default function QRPreview({ data, isValid }: QRPreviewProps) {
           />
         ) : !isLoading ? (
           <div className="flex flex-col items-center gap-2 p-8 text-center">
-            <FontAwesomeIcon icon={faQrcode} className="h-12 w-12 text-[var(--color-text-muted)]" />
-            <p className="text-sm text-[var(--color-text-muted)]">
+            <FontAwesomeIcon icon={faQrcode} className="h-12 w-12 text-(--color-text-muted)" />
+            <p className="text-sm text-(--color-text-muted)">
               Fill in the form to generate a QR code
             </p>
           </div>

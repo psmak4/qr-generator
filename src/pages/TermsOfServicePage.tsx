@@ -8,23 +8,23 @@ export default function TermsOfServicePage() {
       <div className="mb-8">
         <Link
           to="/"
-          className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] no-underline"
+          className="text-sm text-(--color-text-secondary) hover:text-(--color-text-primary) no-underline"
         >
           ← Back to Generator
         </Link>
       </div>
 
       <article className="prose prose-slate dark:prose-invert max-w-none">
-        <h1 className="text-3xl font-bold text-[var(--color-text-primary)]">
+        <h1 className="text-3xl font-bold text-(--color-text-primary)">
           Terms of Service
         </h1>
-        <p className="text-sm text-[var(--color-text-muted)]">
+        <p className="text-sm text-(--color-text-muted)">
           Last updated: {lastUpdated}
         </p>
 
-        <div className="mt-8 space-y-8 text-[var(--color-text-secondary)]">
+        <div className="mt-8 space-y-8 text-(--color-text-secondary)">
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               1. Acceptance of Terms
             </h2>
             <p>
@@ -35,7 +35,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               2. Description of Service
             </h2>
             <p>
@@ -50,7 +50,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               3. Free Use
             </h2>
             <p>
@@ -61,7 +61,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               4. User Responsibilities
             </h2>
             <p>When using the Service, you agree to:</p>
@@ -87,16 +87,16 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               5. Intellectual Property
             </h2>
             <p>
-              <strong className="text-[var(--color-text-primary)]">Your Content:</strong>{' '}
+              <strong className="text-(--color-text-primary)">Your Content:</strong>{' '}
               You retain all rights to any content you input into the Service. We do not 
               claim any ownership over your data or the QR codes you generate.
             </p>
             <p>
-              <strong className="text-[var(--color-text-primary)]">Our Service:</strong>{' '}
+              <strong className="text-(--color-text-primary)">Our Service:</strong>{' '}
               The Service, including its original content (excluding user-generated content), 
               features, and functionality, is owned by us and is protected by copyright, 
               trademark, and other intellectual property laws.
@@ -104,7 +104,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               6. Generated QR Codes
             </h2>
             <p>
@@ -122,7 +122,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               7. Disclaimer of Warranties
             </h2>
             <p>
@@ -145,7 +145,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               8. Limitation of Liability
             </h2>
             <p>
@@ -169,7 +169,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               9. Indemnification
             </h2>
             <p>
@@ -189,7 +189,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               10. Modifications to Service
             </h2>
             <p>
@@ -201,7 +201,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               11. Changes to Terms
             </h2>
             <p>
@@ -213,7 +213,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               12. Governing Law
             </h2>
             <p>
@@ -224,7 +224,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               13. Severability
             </h2>
             <p>
@@ -234,7 +234,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               14. Contact
             </h2>
             <p>
@@ -243,8 +243,8 @@ export default function TermsOfServicePage() {
             </p>
           </section>
 
-          <section className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
-            <h2 className="text-xl font-semibold text-[var(--color-text-primary)]">
+          <section className="rounded-lg border border-(--color-border) bg-(--color-surface) p-6">
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Summary
             </h2>
             <p className="mb-0">

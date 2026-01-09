@@ -22,13 +22,13 @@ export default function CheckboxField({
           name={name}
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
-          className="h-4 w-4 rounded border-[var(--color-border)] bg-[var(--color-background)] text-[var(--color-primary)] focus:ring-2 focus:ring-blue-500/20"
+          className="h-4 w-4 rounded border-(--color-border) bg-(--color-background) text-(--color-primary) focus:ring-2 focus:ring-blue-500/20"
         />
-        <span className="text-sm text-[var(--color-text-primary)]">{label}</span>
+        <span className="text-sm text-(--color-text-primary)">{label}</span>
       </label>
       
       {helpText && (
-        <p className="ml-7 text-xs text-[var(--color-text-muted)]">{helpText}</p>
+        <p className="ml-7 text-xs text-(--color-text-muted)">{helpText}</p>
       )}
     </div>
   );

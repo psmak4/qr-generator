@@ -43,12 +43,12 @@ export default function InputField({
   };
 
   const inputClasses =
-    'w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-4 py-2.5 text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:border-[var(--color-border-focus)] focus:outline-none focus:ring-2 focus:ring-blue-500/20';
+    'w-full rounded-lg border border-(--color-border) bg-(--color-background) px-4 py-2.5 text-(--color-text-primary) placeholder:text-(--color-text-muted) focus:border-(--color-border-focus) focus:outline-none focus:ring-2 focus:ring-blue-500/20';
 
   const getCounterColor = () => {
-    if (isAtLimit) return 'text-[var(--color-error)]';
+    if (isAtLimit) return 'text-(--color-error)';
     if (isOverWarning) return 'text-amber-500';
-    return 'text-[var(--color-text-muted)]';
+    return 'text-(--color-text-muted)';
   };
 
   return (
@@ -56,10 +56,10 @@ export default function InputField({
       <div className="flex items-center justify-between">
         <label
           htmlFor={name}
-          className="block text-sm font-medium text-[var(--color-text-primary)]"
+          className="block text-sm font-medium text-(--color-text-primary)"
         >
           {label}
-          {required && <span className="ml-1 text-[var(--color-error)]">*</span>}
+          {required && <span className="ml-1 text-(--color-error)">*</span>}
         </label>
         {showCounter && (
           <span className={`text-xs ${getCounterColor()}`}>
@@ -101,7 +101,7 @@ export default function InputField({
       )}
       
       {helpText && !isOverWarning && (
-        <p className="text-xs text-[var(--color-text-muted)]">{helpText}</p>
+        <p className="text-xs text-(--color-text-muted)">{helpText}</p>
       )}
     </div>
   );

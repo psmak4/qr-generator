@@ -189,9 +189,10 @@ export function isFormValid(type: QRCodeType, formData: Record<string, unknown>)
       return Boolean((formData as unknown as SMSFormData).phone?.trim());
     case 'wifi':
       return Boolean((formData as unknown as WifiFormData).ssid?.trim());
-    case 'vcard':
+    case 'vcard': {
       const vcard = formData as unknown as VCardFormData;
       return Boolean(vcard.firstName?.trim() || vcard.lastName?.trim());
+    }
     default:
       return false;
   }

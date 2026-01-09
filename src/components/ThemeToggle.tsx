@@ -14,15 +14,15 @@ export default function ThemeToggle() {
   ];
 
   return (
-    <div className="flex items-center gap-1 rounded-lg bg-[var(--color-surface)] p-1">
+    <div className="flex items-center gap-1 rounded-lg bg-(--color-surface) p-1">
       {options.map((option) => (
         <button
           key={option.value}
           onClick={() => setTheme(option.value)}
           className={`rounded-md px-3 py-1.5 text-sm transition-colors ${
             theme === option.value
-              ? 'bg-[var(--color-background)] text-[var(--color-text-primary)] shadow-sm'
-              : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
+              ? 'bg-(--color-background) text-(--color-text-primary) shadow-sm'
+              : 'text-(--color-text-secondary) hover:text-(--color-text-primary)'
           }`}
           aria-label={`Switch to ${option.label} theme`}
           title={option.label}

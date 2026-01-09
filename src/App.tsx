@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
+import { ThemeProvider } from './context/ThemeProvider';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { HomePage, PrivacyPolicyPage, TermsOfServicePage } from './pages';
@@ -8,7 +8,7 @@ function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <div className="flex min-h-screen flex-col bg-[var(--color-background)]">
+        <div className="flex min-h-screen flex-col bg-(--color-background)">
           <Header />
           <main className="flex-1">
             <Routes>

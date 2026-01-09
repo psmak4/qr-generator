@@ -18,7 +18,7 @@ export default function VCardForm({ data, onChange }: VCardFormProps) {
     <div className="space-y-6">
       {/* Name Section */}
       <div>
-        <h3 className="mb-3 text-sm font-medium text-[var(--color-text-secondary)]">
+        <h3 className="mb-3 text-sm font-medium text-(--color-text-secondary)">
           Personal Information
         </h3>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -44,7 +44,7 @@ export default function VCardForm({ data, onChange }: VCardFormProps) {
 
       {/* Organization Section */}
       <div>
-        <h3 className="mb-3 text-sm font-medium text-[var(--color-text-secondary)]">
+        <h3 className="mb-3 text-sm font-medium text-(--color-text-secondary)">
           Work Information
         </h3>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -69,7 +69,7 @@ export default function VCardForm({ data, onChange }: VCardFormProps) {
 
       {/* Contact Section */}
       <div>
-        <h3 className="mb-3 text-sm font-medium text-[var(--color-text-secondary)]">
+        <h3 className="mb-3 text-sm font-medium text-(--color-text-secondary)">
           Contact Details
         </h3>
         <div className="space-y-4">
@@ -116,7 +116,7 @@ export default function VCardForm({ data, onChange }: VCardFormProps) {
 
       {/* Address Section */}
       <div>
-        <h3 className="mb-3 text-sm font-medium text-[var(--color-text-secondary)]">
+        <h3 className="mb-3 text-sm font-medium text-(--color-text-secondary)">
           Address
         </h3>
         <div className="space-y-4">
