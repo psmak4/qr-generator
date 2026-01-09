@@ -6,7 +6,7 @@ import type {
   SMSFormData,
   WifiFormData,
   VCardFormData,
-  QRCodeType,
+  QRData,
 } from '../types';
 
 /**
@@ -151,49 +151,43 @@ export function generateVCardData(data: VCardFormData): string {
 /**
  * Generate QR code data string based on type and form data
  */
-export function generateQRData(type: QRCodeType, formData: Record<string, unknown>): string {
-  switch (type) {
+export function generateQRData(qrData: QRData): string {
+  switch (qrData.type) {
     case 'url':
-      return generateURLData(formData as unknown as URLFormData);
+      return generateURLData(qrData.data);
     case 'text':
-      return generateTextData(formData as unknown as TextFormData);
+      return generateTextData(qrData.data);
     case 'email':
-      return generateEmailData(formData as unknown as EmailFormData);
+      return generateEmailData(qrData.data);
     case 'phone':
-      return generatePhoneData(formData as unknown as PhoneFormData);
+      return generatePhoneData(qrData.data);
     case 'sms':
-      return generateSMSData(formData as unknown as SMSFormData);
+      return generateSMSData(qrData.data);
     case 'wifi':
-      return generateWifiData(formData as unknown as WifiFormData);
+      return generateWifiData(qrData.data);
     case 'vcard':
-      return generateVCardData(formData as unknown as VCardFormData);
-    default:
-      return '';
+      return generateVCardData(qrData.data);
   }
 }
 
 /**
  * Validate if form data has minimum required fields filled
  */
-export function isFormValid(type: QRCodeType, formData: Record<string, unknown>): boolean {
-  switch (type) {
+export function isFormValid(qrData: QRData): boolean {
+  switch (qrData.type) {
     case 'url':
-      return Boolean((formData as unknown as URLFormData).url?.trim());
+      return Boolean(qrData.data.url?.trim());
     case 'text':
-      return Boolean((formData as unknown as TextFormData).text?.trim());
+      return Boolean(qrData.data.text?.trim());
     case 'email':
-      return Boolean((formData as unknown as EmailFormData).email?.trim());
+      return Boolean(qrData.data.email?.trim());
     case 'phone':
-      return Boolean((formData as unknown as PhoneFormData).phone?.trim());
+      return Boolean(qrData.data.phone?.trim());
     case 'sms':
-      return Boolean((formData as unknown as SMSFormData).phone?.trim());
+      return Boolean(qrData.data.phone?.trim());
     case 'wifi':
-      return Boolean((formData as unknown as WifiFormData).ssid?.trim());
-    case 'vcard': {
-      const vcard = formData as unknown as VCardFormData;
-      return Boolean(vcard.firstName?.trim() || vcard.lastName?.trim());
-    }
-    default:
-      return false;
+      return Boolean(qrData.data.ssid?.trim());
+    case 'vcard':
+      return Boolean(qrData.data.firstName?.trim() || qrData.data.lastName?.trim());
   }
 }

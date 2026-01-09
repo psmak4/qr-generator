@@ -77,6 +77,16 @@ export type FormData =
   | WifiFormData
   | VCardFormData;
 
+// Discriminated Union for strict type safety
+export type QRData =
+  | { type: 'url'; data: URLFormData }
+  | { type: 'text'; data: TextFormData }
+  | { type: 'email'; data: EmailFormData }
+  | { type: 'phone'; data: PhoneFormData }
+  | { type: 'sms'; data: SMSFormData }
+  | { type: 'wifi'; data: WifiFormData }
+  | { type: 'vcard'; data: VCardFormData };
+
 // QR Code type configuration
 export interface QRCodeTypeConfig {
   id: QRCodeType;

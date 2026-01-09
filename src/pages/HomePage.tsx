@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShieldHalved, faGift, faBolt, faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import type { QRCodeType } from '../types';
+import type { QRCodeType, QRData, FormData } from '../types';
 import QRTypeSelector from '../components/QRTypeSelector';
 import QRFormRenderer from '../components/QRFormRenderer';
 import QRPreview from '../components/QRPreview';
@@ -10,70 +10,73 @@ import DownloadOptions from '../components/DownloadOptions';
 import { generateQRData, isFormValid } from '../utils/qrDataGenerator';
 
 // Initial form data for each QR code type
-const getInitialFormData = (type: QRCodeType): Record<string, unknown> => {
+const getInitialQRData = (type: QRCodeType): QRData => {
   switch (type) {
     case 'url':
-      return { url: '' };
+      return { type, data: { url: '' } };
     case 'text':
-      return { text: '' };
+      return { type, data: { text: '' } };
     case 'email':
-      return { email: '', subject: '', body: '' };
+      return { type, data: { email: '', subject: '', body: '' } };
     case 'phone':
-      return { phone: '' };
+      return { type, data: { phone: '' } };
     case 'sms':
-      return { phone: '', message: '' };
+      return { type, data: { phone: '', message: '' } };
     case 'wifi':
-      return { ssid: '', password: '', encryption: 'WPA', hidden: false };
+      return { type, data: { ssid: '', password: '', encryption: 'WPA', hidden: false } };
     case 'vcard':
       return {
-        firstName: '',
-        lastName: '',
-        organization: '',
-        title: '',
-        email: '',
-        phone: '',
-        mobile: '',
-        website: '',
-        street: '',
-        city: '',
-        state: '',
-        zip: '',
-        country: '',
+        type,
+        data: {
+          firstName: '',
+          lastName: '',
+          organization: '',
+          title: '',
+          email: '',
+          phone: '',
+          mobile: '',
+          website: '',
+          street: '',
+          city: '',
+          state: '',
+          zip: '',
+          country: '',
+        },
       };
     default:
-      return {};
+      // Fallback for type safety, though strict typing prevents reaching here with valid QRCodeType
+      return { type: 'url', data: { url: '' } } as QRData;
   }
 };
 
 export default function HomePage() {
-  const [selectedType, setSelectedType] = useState<QRCodeType>('url');
-  const [formData, setFormData] = useState<Record<string, unknown>>(
-    getInitialFormData('url')
-  );
+  const [qrState, setQrState] = useState<QRData>(getInitialQRData('url'));
 
   const handleTypeChange = (type: QRCodeType) => {
-    setSelectedType(type);
-    setFormData(getInitialFormData(type));
+    setQrState(getInitialQRData(type));
   };
 
-  const handleFormChange = (data: Record<string, unknown>) => {
-    setFormData(data);
+  const handleFormChange = (newData: FormData) => {
+    setQrState((prevState) => ({
+      ...prevState,
+      data: newData,
+    } as QRData));
   };
 
   const handleReset = () => {
     if (window.confirm('Are you sure you want to reset all fields?')) {
-      setFormData(getInitialFormData(selectedType));
+      setQrState(getInitialQRData(qrState.type));
     }
   };
 
   const isValid = useMemo(
-    () => isFormValid(selectedType, formData),
-    [selectedType, formData]
+    () => isFormValid(qrState),
+    [qrState]
   );
 
-  const qrData = useMemo(
-    () => (isValid ? generateQRData(selectedType, formData) : ''),
-    [selectedType, formData, isValid]
+  const qrDataString = useMemo(
+    () => (isValid ? generateQRData(qrState) : ''),
+    [qrState, isValid]
   );
 
   return (
@@ -95,7 +98,7 @@ export default function HomePage() {
           {/* Type Selector */}
           <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6">
             <QRTypeSelector
-              selectedType={selectedType}
+              selectedType={qrState.type}
               onTypeChange={handleTypeChange}
             />
           </div>
@@ -115,8 +118,7 @@ export default function HomePage() {
             </div>
             
             <QRFormRenderer
-              type={selectedType}
-              formData={formData}
+              qrData={qrState}
               onFormChange={handleFormChange}
             />
           </div>
@@ -129,12 +131,12 @@ export default function HomePage() {
             <h2 className="mb-4 text-lg font-medium text-(--color-text-primary)">
               Preview
             </h2>
-            <QRPreview data={qrData} isValid={isValid} />
+            <QRPreview data={qrDataString} isValid={isValid} />
           </div>
 
           {/* Download Options */}
           <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6">
-            <DownloadOptions qrData={qrData} isValid={isValid} />
+            <DownloadOptions qrData={qrDataString} isValid={isValid} />
           </div>
         </div>
       </div>
