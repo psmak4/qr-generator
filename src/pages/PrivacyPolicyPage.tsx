@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = 'January 8, 2026';
+  const lastUpdated = 'January 9, 2026';
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
@@ -28,14 +28,11 @@ export default function PrivacyPolicyPage() {
               Overview
             </h2>
             <p>
-              QR Generator ("we", "our", or "us") is committed to protecting your privacy. 
-              This Privacy Policy explains how our free QR code generator handles information 
-              when you use our service.
+              QR Generator ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how our free QR code generator handles information when you use our service.
             </p>
             <p>
               <strong className="text-(--color-text-primary)">
-                The short version: We don't collect, store, or transmit any of your data. 
-                Everything happens locally in your browser.
+                The short version: We don't collect, store, or transmit any of your QR code data. All QR code generation happens locally in your browser. However, we do use third-party advertising services that may collect browsing information through cookies and similar technologies.
               </strong>
             </p>
           </section>
@@ -45,15 +42,15 @@ export default function PrivacyPolicyPage() {
               Information We Don't Collect
             </h2>
             <p>
-              Our QR code generator is designed with privacy as a core principle. We do not:
+              Our QR code generator is designed with privacy as a core principle. <strong>We do not:</strong>
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Collect any personal information you enter into the forms</li>
+              <li>Collect any personal information you enter into the QR code forms</li>
               <li>Store any QR codes you generate</li>
               <li>Track the content of your QR codes</li>
               <li>Require account creation or login</li>
-              <li>Use cookies to identify or track users</li>
-              <li>Transmit any data you enter to our servers or third parties</li>
+              <li>Transmit any data you enter to our servers</li>
+              <li>Have access to your QR code data</li>
             </ul>
           </section>
 
@@ -62,62 +59,309 @@ export default function PrivacyPolicyPage() {
               How Our Service Works
             </h2>
             <p>
-              All QR code generation happens entirely within your web browser using 
-              client-side JavaScript. This means:
+              All QR code generation happens entirely within your web browser using client-side JavaScript. This means:
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>
-                Your data (URLs, text, contact information, WiFi credentials, etc.) 
-                is processed locally on your device
-              </li>
+              <li>Your data (URLs, text, contact information, WiFi credentials, etc.) is processed locally on your device</li>
               <li>QR codes are generated using your device's computing resources</li>
               <li>Downloaded files are created directly in your browser</li>
-              <li>No information is sent to any server during the QR code creation process</li>
+              <li>No QR code information is sent to any server during the creation process</li>
+              <li>Once you close your browser tab, your QR code data is gone forever (unless you saved the file)</li>
             </ul>
+            <p className="mt-4 font-medium text-(--color-text-primary)">
+              We never see, store, or have access to the data you put into your QR codes.
+            </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-(--color-text-primary)">
-              Local Storage
+              Advertising
             </h2>
             <p>
-              We may use your browser's local storage to save your theme preference 
-              (light mode, dark mode, or system preference). This data:
+              To keep this service completely free, we display advertisements on our website. These ads are provided by third-party advertising networks, primarily Google AdSense.
             </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Stays on your device and is never transmitted</li>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              How Advertising Works
+            </h3>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Third-party vendors</strong>, including Google, use cookies to serve ads based on your prior visits to this website or other websites across the internet</li>
+              <li><strong>Google's use of advertising cookies</strong> enables it and its partners to serve ads to you based on your browsing history</li>
+              <li><strong>Personalized advertising</strong>: Ads may be tailored based on your interests, demographics, and browsing behavior</li>
+              <li><strong>Ad measurement</strong>: Advertisers measure how their ads perform and whether you interact with them</li>
+            </ul>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Information Collected by Advertisers
+            </h3>
+            <p className="mt-2">
+              While <strong>we do not collect or store your QR code data</strong>, our advertising partners may collect the following information through cookies and similar tracking technologies:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Cookie identifiers and similar tracking IDs</li>
+              <li>IP addresses (which may indicate your general location)</li>
+              <li>Browser type and version</li>
+              <li>Operating system and device information</li>
+              <li>Pages you visit on our website</li>
+              <li>Time and date of your visits</li>
+              <li>Referring website addresses (how you got to our site)</li>
+              <li>Ad interaction data (which ads you view or click)</li>
+              <li>Cross-site browsing behavior (your activity on other websites)</li>
+            </ul>
+            <p className="mt-4 italic">
+              <strong>Important</strong>: This advertising data is collected and controlled by our advertising partners according to their own privacy policies. We do not have access to this data in a way that identifies individual users.
+            </p>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Your Advertising Choices
+            </h3>
+            <p className="mt-2">You have several options to control personalized advertising:</p>
+            
+            <h4 className="mt-4 font-semibold text-(--color-text-primary)">Opt Out of Personalized Ads</h4>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Google Ad Settings</strong>: Customize your Google advertising preferences at <a href="https://adssettings.google.com/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://adssettings.google.com/</a></li>
+              <li><strong>Google Analytics Opt-Out</strong>: Install the browser add-on at <a href="https://tools.google.com/dlpage/gaoptout" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout</a></li>
+              <li><strong>Industry Opt-Out Pages</strong>:
+                <ul className="mt-1 list-circle pl-6 space-y-1">
+                  <li>US: <a href="https://optout.aboutads.info/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://optout.aboutads.info/</a></li>
+                  <li>US: <a href="https://optout.networkadvertising.org/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://optout.networkadvertising.org/</a></li>
+                  <li>Europe: <a href="https://www.youronlinechoices.com/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://www.youronlinechoices.com/</a></li>
+                  <li>Canada: <a href="https://youradchoices.ca/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://youradchoices.ca/</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <h4 className="mt-4 font-semibold text-(--color-text-primary)">Browser Controls</h4>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Disable cookies</strong>: Set your browser to refuse all cookies (though this may affect website functionality)</li>
+              <li><strong>Private browsing</strong>: Use incognito/private mode to limit tracking</li>
+              <li><strong>Browser extensions</strong>: Install privacy-focused extensions like Privacy Badger or uBlock Origin</li>
+            </ul>
+            <p className="mt-4 text-sm">
+              <strong>Note</strong>: Opting out of personalized ads doesn't mean you'll see fewer ads—it means the ads you see will be less relevant to your interests.
+            </p>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Third-Party Privacy Policies
+            </h3>
+            <p className="mt-2">
+              Our advertising partners have their own privacy policies that govern how they collect and use data. We encourage you to review them:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Google Privacy Policy</strong>: <a href="https://policies.google.com/privacy" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+              <li><strong>Google Advertising</strong>: <a href="https://policies.google.com/technologies/ads" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/ads</a></li>
+              <li><strong>Google Partner Sites</strong>: <a href="https://policies.google.com/technologies/partner-sites" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/partner-sites</a></li>
+            </ul>
+            <p className="mt-4 text-sm">
+              Please note that we have no control over these third-party cookies, tracking technologies, or privacy practices.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
+              Cookies and Local Storage
+            </h2>
+            
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Our Use of Local Storage
+            </h3>
+            <p className="mt-2">
+              We use your browser's local storage to save your theme preference (light mode, dark mode, or system preference). This data:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Stays on your device and is never transmitted to our servers</li>
               <li>Can be cleared by clearing your browser data</li>
               <li>Does not contain any personal information</li>
+              <li>Is optional—our site works fine without it</li>
             </ul>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Third-Party Cookies
+            </h3>
+            <p className="mt-2">
+              <strong>Advertising cookies</strong> are placed by our advertising partners (primarily Google AdSense) and are used for:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Serving relevant advertisements based on your browsing history</li>
+              <li>Measuring ad performance and effectiveness</li>
+              <li>Preventing fraud and ensuring ad quality</li>
+              <li>Personalizing ads to match your interests</li>
+              <li>Tracking whether you interact with ads</li>
+            </ul>
+            <p className="mt-4 text-sm italic">
+              These cookies are governed by the privacy policies of the companies that place them, not by our privacy policy.
+            </p>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Managing Cookies
+            </h3>
+            <p className="mt-2">You can control cookies through your browser settings:</p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Chrome</strong>: Settings {'>'} Privacy and security {'>'} Cookies and other site data</li>
+              <li><strong>Firefox</strong>: Settings {'>'} Privacy & Security {'>'} Cookies and Site Data</li>
+              <li><strong>Safari</strong>: Preferences {'>'} Privacy {'>'} Cookies and website data</li>
+              <li><strong>Edge</strong>: Settings {'>'} Cookies and site permissions {'>'} Cookies and site data</li>
+            </ul>
+            <p className="mt-4 text-sm">
+              Blocking all cookies may prevent our site from functioning properly and will prevent you from seeing relevant advertisements.
+            </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Third-Party Services
             </h2>
+            
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Hosting
+            </h3>
+            <p className="mt-2">
+              Our website is hosted on static hosting infrastructure (Netlify). The hosting provider may collect:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Server logs including IP addresses, browser types, and access times</li>
+              <li>This data is used for security, performance monitoring, and troubleshooting</li>
+              <li>We do not have access to or use this information to identify individual users</li>
+            </ul>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Analytics (If Applicable)
+            </h3>
+            <p className="mt-2">
+              If we use analytics services (such as Google Analytics or Cloudflare Analytics), we collect:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Anonymous usage statistics</li>
+              <li>Page views and navigation patterns</li>
+              <li>Device and browser information</li>
+              <li>Geographic location (country/region level only)</li>
+            </ul>
+            <p className="mt-4 text-sm">
+              This data is aggregated and used solely to improve our service. No personally identifiable information is collected.
+            </p>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Advertising Services
+            </h3>
+            <p className="mt-2">
+              We use third-party advertising services, primarily Google AdSense. These services:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>May use cookies, web beacons, and similar tracking technologies</li>
+              <li>May track your browsing behavior across multiple websites</li>
+              <li>May show you personalized advertisements based on your interests</li>
+              <li>Are governed by their own privacy policies (see links above)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
+              International Data Transfers
+            </h2>
             <p>
-              Our website is hosted on static hosting infrastructure. While the hosting 
-              provider may collect basic server logs (IP addresses, browser types, access 
-              times) for security and operational purposes, we do not have access to or 
-              use this information to identify individual users.
+              Our advertising partners, including Google, may transfer and process your data in countries outside your own, including the United States. These countries may have different data protection laws than your country.
+            </p>
+            <p className="mt-4">
+              Google participates in relevant data protection frameworks and implements appropriate safeguards for international data transfers.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-(--color-text-primary)">
-              Security
+              GDPR Compliance (European Users)
             </h2>
-            <p>
-              We take reasonable precautions to protect the security of our website:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Our website is served over HTTPS to ensure encrypted connections</li>
-              <li>We regularly update our dependencies to address security vulnerabilities</li>
-              <li>
-                Since we don't store your data, there is no database that could be 
-                compromised
-              </li>
+            
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Your Rights
+            </h3>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Right to access</strong>: Request information about what data has been collected about you</li>
+              <li><strong>Right to rectification</strong>: Request corrections to inaccurate data</li>
+              <li><strong>Right to erasure</strong> ("right to be forgotten"): Request deletion of your data</li>
+              <li><strong>Right to restrict processing</strong>: Limit how your data is used</li>
+              <li><strong>Right to data portability</strong>: Request a copy of your data in a portable format</li>
+              <li><strong>Right to object</strong>: Object to certain types of data processing</li>
+              <li><strong>Right to withdraw consent</strong>: Withdraw consent for data processing at any time</li>
             </ul>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Exercising Your Rights
+            </h3>
+            <p className="mt-2">
+              <strong>For QR code data</strong>: Since we don't collect or store your QR code data, there is nothing for us to delete or provide. Your QR code data never leaves your browser.
+            </p>
+            <p className="mt-4">
+              <strong>For advertising data</strong>: To exercise your rights regarding advertising cookies and tracking:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Manage Google ad settings: <a href="https://adssettings.google.com/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://adssettings.google.com/</a></li>
+              <li>Access your Google data: <a href="https://myaccount.google.com/data-and-privacy" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/data-and-privacy</a></li>
+              <li>Request data deletion through your Google account settings</li>
+              <li>Contact us (see below) and we will direct you to the appropriate third party</li>
+            </ul>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Legal Basis for Processing
+            </h3>
+            <p className="mt-2">Under GDPR, the legal bases for processing your data are:</p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Legitimate interests</strong>: We have a legitimate interest in displaying ads to keep our service free</li>
+              <li><strong>Consent</strong>: By using our website and accepting cookies, you consent to advertising tracking (where consent is required)</li>
+            </ul>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Consent Management
+            </h3>
+            <p className="mt-2">
+              For EU visitors, we may display a cookie consent banner that allows you to:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Accept or reject cookies</li>
+              <li>Customize your cookie preferences</li>
+              <li>Withdraw consent at any time</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
+              CCPA Compliance (California Users)
+            </h2>
+            
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Your California Rights
+            </h3>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Right to know</strong>: What personal information is collected and how it's used</li>
+              <li><strong>Right to delete</strong>: Request deletion of personal information</li>
+              <li><strong>Right to opt-out</strong>: Opt out of the "sale" of personal information</li>
+              <li><strong>Right to non-discrimination</strong>: Not be discriminated against for exercising your rights</li>
+            </ul>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              California "Do Not Sell My Personal Information"
+            </h3>
+            <p className="mt-2">
+              While we don't directly "sell" your personal information, our advertising partners may share information in ways that could be considered a "sale" under CCPA.
+            </p>
+            <p className="mt-4"><strong>To opt out of this sharing</strong>:</p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Visit Google's opt-out page: <a href="https://adssettings.google.com/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://adssettings.google.com/</a></li>
+              <li>Use the industry opt-out page: <a href="https://optout.aboutads.info/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://optout.aboutads.info/</a></li>
+              <li>Enable "Do Not Track" or "Global Privacy Control" in your browser</li>
+            </ul>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Categories of Information Collected (for advertising purposes)
+            </h3>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Identifiers (cookie IDs, IP addresses, device IDs)</li>
+              <li>Internet activity (browsing history, ad interactions)</li>
+              <li>Geolocation data (general location based on IP address)</li>
+              <li>Inferences (ad preferences, likely interests)</li>
+            </ul>
+            <p className="mt-4 text-sm">
+              This information is collected by third-party advertisers, not by us directly.
+            </p>
           </section>
 
           <section>
@@ -125,20 +369,93 @@ export default function PrivacyPolicyPage() {
               Children's Privacy
             </h2>
             <p>
-              Our service does not knowingly collect any information from anyone, 
-              including children under 13. Since we don't collect personal information, 
-              there are no special provisions needed for children's data.
+              Our service does not knowingly collect any information from anyone, including children under 13 (or 16 in some jurisdictions).
+            </p>
+            <ul className="mt-4 list-disc pl-6 space-y-2">
+              <li>We do not specifically target children</li>
+              <li>We do not knowingly collect personal information from children</li>
+              <li>Since we don't collect QR code data, there is no risk of collecting children's data through our service</li>
+              <li>Our advertising partners are required to comply with children's privacy laws (such as COPPA)</li>
+            </ul>
+            <p className="mt-4 text-sm">
+              If you believe a child has provided information through our advertising partners, please contact those partners directly (links provided above).
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-(--color-text-primary)">
-              Changes to This Policy
+              Data Security
+            </h2>
+            
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Our Security Measures
+            </h3>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>HTTPS encryption</strong>: All connections to our website are encrypted using SSL/TLS</li>
+              <li><strong>No data storage</strong>: Since we don't store your QR code data, there is no database that could be compromised</li>
+              <li><strong>Regular updates</strong>: We keep our dependencies and infrastructure up to date with security patches</li>
+              <li><strong>Client-side processing</strong>: Your QR code data never leaves your device</li>
+            </ul>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Third-Party Security
+            </h3>
+            <p className="mt-2">
+              Our advertising partners implement their own security measures. We encourage you to review their security policies:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>Google Security: <a href="https://safety.google/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://safety.google/</a></li>
+            </ul>
+            <p className="mt-4 text-sm italic">
+              <strong>Important</strong>: While we implement reasonable security measures, no method of transmission over the internet is 100% secure. Your QR code data is as secure as your own device since it never leaves your browser.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
+              Data Retention
+            </h2>
+            
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Our Data Retention
+            </h3>
+            <p className="mt-2">
+              We do not retain any of your QR code data because we never collect it in the first place. The moment you close your browser tab, your QR code data is gone (unless you saved the file to your device).
+            </p>
+
+            <h3 className="mt-6 text-lg font-semibold text-(--color-text-primary)">
+              Third-Party Data Retention
+            </h3>
+            <p className="mt-2">
+              Our advertising partners retain data according to their own policies:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Google</strong>: Typically retains advertising data for varying periods (some data for months, some indefinitely)</li>
+              <li>You can delete your Google advertising data at any time through your Google account settings</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-(--color-text-primary)">
+              Changes to This Privacy Policy
             </h2>
             <p>
-              We may update this Privacy Policy from time to time. We will notify you 
-              of any changes by posting the new Privacy Policy on this page and updating 
-              the "Last updated" date.
+              We may update this Privacy Policy from time to time to reflect:
+            </p>
+            <ul className="mt-4 list-disc pl-6 space-y-2">
+              <li>Changes in our practices</li>
+              <li>Changes in advertising partners</li>
+              <li>Changes in applicable laws</li>
+              <li>New features or services</li>
+            </ul>
+            <p className="mt-4">When we make changes:</p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li>We will update the "Last updated" date at the top of this page</li>
+              <li>For material changes, we may display a notice on our website</li>
+              <li>Continued use of our service after changes constitutes acceptance of the updated policy</li>
+            </ul>
+            <p className="mt-4 text-sm">
+              We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.
             </p>
           </section>
 
@@ -147,8 +464,22 @@ export default function PrivacyPolicyPage() {
               Contact Us
             </h2>
             <p>
-              If you have any questions about this Privacy Policy, please contact us 
-              through the repository where this project is hosted.
+              If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:
+            </p>
+            <ul className="mt-4 list-disc pl-6 space-y-2">
+              <li><strong>Email</strong>: [your-email@example.com]</li>
+              <li><strong>GitHub Issues</strong>: <a href="https://github.com/psmak4/qr-generator/issues" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://github.com/psmak4/qr-generator/issues</a></li>
+              <li><strong>Website</strong>: <a href="https://thebestqrgenerator.com" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://thebestqrgenerator.com</a></li>
+            </ul>
+            <p className="mt-6 font-medium text-(--color-text-primary)">
+              For advertising-related inquiries, you may need to contact our advertising partners directly:
+            </p>
+            <ul className="mt-2 list-disc pl-6 space-y-2">
+              <li><strong>Google AdSense Support</strong>: <a href="https://support.google.com/adsense/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://support.google.com/adsense/</a></li>
+              <li><strong>Google Privacy Inquiries</strong>: <a href="https://support.google.com/policies/" className="text-(--color-primary) hover:underline" target="_blank" rel="noopener noreferrer">https://support.google.com/policies/</a></li>
+            </ul>
+            <p className="mt-4 text-sm">
+              We will respond to privacy inquiries within 30 days.
             </p>
           </section>
 
@@ -156,10 +487,29 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl font-semibold text-(--color-text-primary)">
               Summary
             </h2>
-            <p className="mb-0">
-              We built this QR generator to be privacy-first. Your data is your data. 
-              We never see it, store it, or share it. Generate QR codes with confidence 
-              knowing that your information stays on your device.
+            <div className="mt-4 space-y-3">
+              <p className="flex items-start gap-2">
+                <span className="text-green-500">✅</span>
+                <span><strong>Your QR code data is completely private</strong> – we never see it, store it, or transmit it. Everything happens locally in your browser.</span>
+              </p>
+              <p className="flex items-start gap-2">
+                <span className="text-green-500">✅</span>
+                <span><strong>Advertising keeps us free</strong> – we use third-party ads (primarily Google AdSense) to support this free service. These ads use cookies and may collect browsing information.</span>
+              </p>
+              <p className="flex items-start gap-2">
+                <span className="text-green-500">✅</span>
+                <span><strong>You have choices</strong> – you can opt out of personalized advertising through the links provided above.</span>
+              </p>
+              <p className="flex items-start gap-2">
+                <span className="text-green-500">✅</span>
+                <span><strong>We're transparent</strong> – this policy clearly explains what we do and don't collect.</span>
+              </p>
+            </div>
+            <p className="mt-6 text-sm italic">
+              Generate QR codes with confidence knowing that your actual QR code data stays on your device and is never seen by us or anyone else. The only data collected is standard advertising and analytics information that helps keep this service free and running.
+            </p>
+            <p className="mt-4 font-bold text-(--color-text-primary)">
+              Thank you for using The Best QR Code Generator!
             </p>
           </section>
         </div>
