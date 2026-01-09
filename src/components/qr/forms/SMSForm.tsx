@@ -1,7 +1,7 @@
 import InputField from './InputField';
-import type { SMSFormData } from '../../types';
-import { QR_LIMITS } from '../../constants';
-import { handlePhoneChange } from '../../utils/phoneFormatter';
+import type { SMSFormData } from '../../../types';
+import { QR_LIMITS } from '../../../constants';
+import { handlePhoneChange } from '../../../utils/phoneFormatter';
 
 interface SMSFormProps {
   data: SMSFormData;

@@ -1,4 +1,4 @@
-import type { QRData, FormData } from '../types';
+import type { QRData, FormData } from '../../types';
 import {
   URLForm,
   TextForm,

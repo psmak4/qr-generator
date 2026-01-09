@@ -1,8 +1,8 @@
 import InputField from './InputField';
 import SelectField from './SelectField';
 import CheckboxField from './CheckboxField';
-import type { WifiFormData, WifiEncryption } from '../../types';
-import { WIFI_ENCRYPTION_OPTIONS, QR_LIMITS } from '../../constants';
+import type { WifiFormData, WifiEncryption } from '../../../types';
+import { WIFI_ENCRYPTION_OPTIONS, QR_LIMITS } from '../../../constants';
 
 interface WifiFormProps {
   data: WifiFormData;

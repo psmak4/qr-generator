@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import type { QRCodeType } from '../types';
-import { QR_CODE_TYPES } from '../constants';
+import type { QRCodeType } from '../../types';
+import { QR_CODE_TYPES } from '../../constants';
 
 interface QRTypeSelectionProps {
   selectedType: QRCodeType;

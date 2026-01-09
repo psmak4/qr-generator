@@ -1,6 +1,6 @@
 import InputField from './InputField';
-import type { PhoneFormData } from '../../types';
-import { handlePhoneChange } from '../../utils/phoneFormatter';
+import type { PhoneFormData } from '../../../types';
+import { handlePhoneChange } from '../../../utils/phoneFormatter';
 
 interface PhoneFormProps {
   data: PhoneFormData;

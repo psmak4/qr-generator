@@ -1,6 +1,6 @@
 import InputField from './InputField';
-import type { TextFormData } from '../../types';
-import { QR_LIMITS } from '../../constants';
+import type { TextFormData } from '../../../types';
+import { QR_LIMITS } from '../../../constants';
 
 interface TextFormProps {
   data: TextFormData;

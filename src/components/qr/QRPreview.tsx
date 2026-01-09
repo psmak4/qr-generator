@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQrcode } from '@fortawesome/free-solid-svg-icons';
-import { useQRGenerator } from '../hooks/useQRGenerator';
+import { useQRGenerator } from '../../hooks/useQRGenerator';
 
 interface QRPreviewProps {
   data: string;

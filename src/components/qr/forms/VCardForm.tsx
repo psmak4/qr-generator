@@ -1,6 +1,6 @@
 import InputField from './InputField';
-import type { VCardFormData } from '../../types';
-import { QR_LIMITS } from '../../constants';
+import type { VCardFormData } from '../../../types';
+import { QR_LIMITS } from '../../../constants';
 
 interface VCardFormProps {
   data: VCardFormData;

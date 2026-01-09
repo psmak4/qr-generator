@@ -1,9 +1,9 @@
 import { useState, useMemo } from 'react';
 import { faShieldHalved, faGift, faBolt, faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
 import type { QRCodeType, QRData, FormData } from '../types';
-import QRTypeSelector from '../components/QRTypeSelector';
-import QRFormRenderer from '../components/QRFormRenderer';
-import QRPreview from '../components/QRPreview';
+import QRTypeSelector from '../components/qr/QRTypeSelector';
+import QRFormRenderer from '../components/qr/QRFormRenderer';
+import QRPreview from '../components/qr/QRPreview';
 import DownloadOptions from '../components/DownloadOptions';
 import FeatureCard from '../components/FeatureCard';
 import { generateQRData, isFormValid } from '../utils/qrDataGenerator';

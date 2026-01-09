@@ -1,6 +1,6 @@
 import InputField from './InputField';
-import type { EmailFormData } from '../../types';
-import { QR_LIMITS } from '../../constants';
+import type { EmailFormData } from '../../../types';
+import { QR_LIMITS } from '../../../constants';
 
 interface EmailFormProps {
   data: EmailFormData;

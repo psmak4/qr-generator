@@ -1,6 +1,6 @@
 import InputField from './InputField';
-import type { URLFormData } from '../../types';
-import { QR_LIMITS } from '../../constants';
+import type { URLFormData } from '../../../types';
+import { QR_LIMITS } from '../../../constants';
 
 interface URLFormProps {
   data: URLFormData;
