@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { downloadQRCode, downloadAllFormats } from '../utils/download';
 import { PNG_RESOLUTIONS, JPG_RESOLUTIONS } from '../constants';
 import type { DownloadFormat, PNGResolution, JPGResolution } from '../types';
+import Button from './Button';
 
 interface DownloadOptionsProps {
   qrData: string;
@@ -41,11 +42,6 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
     }
   };
 
-  const buttonBaseClass =
-    'flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50';
-  const primaryButtonClass = `${buttonBaseClass} bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]`;
-  const secondaryButtonClass = `${buttonBaseClass} border border-[var(--color-border)] bg-[var(--color-background)] text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]`;
-
   return (
     <div className="space-y-6">
       <h3 className="text-lg font-medium text-(--color-text-primary)">
@@ -61,7 +57,7 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
           <select
             value={selectedPngRes}
             onChange={(e) => setSelectedPngRes(Number(e.target.value) as PNGResolution)}
-            className="rounded-lg border border-(--color-border) bg-(--color-background) px-3 py-2 text-sm text-(--color-text-primary)"
+            className="rounded-lg border border-(--color-border) bg-(--color-background) px-3 py-2.5 text-sm text-(--color-text-primary) focus:border-(--color-border-focus) focus:outline-none"
             disabled={!isValid}
           >
             {PNG_RESOLUTIONS.map((res) => (
@@ -70,13 +66,13 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
               </option>
             ))}
           </select>
-          <button
+          <Button
             onClick={() => handleDownload('png', selectedPngRes)}
             disabled={!isValid || isDownloading === 'png'}
-            className={secondaryButtonClass}
+            isLoading={isDownloading === 'png'}
           >
             {isDownloading === 'png' ? 'Downloading...' : 'Download PNG'}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -86,16 +82,16 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
           <span className="text-sm font-medium text-(--color-text-secondary) w-12">
             SVG
           </span>
-          <span className="text-xs text-(--color-text-muted)">
+          <span className="text-xs text-(--color-text-muted) mr-auto sm:mr-0">
             Scalable vector format
           </span>
-          <button
+          <Button
             onClick={() => handleDownload('svg')}
             disabled={!isValid || isDownloading === 'svg'}
-            className={secondaryButtonClass}
+            isLoading={isDownloading === 'svg'}
           >
             {isDownloading === 'svg' ? 'Downloading...' : 'Download SVG'}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -108,7 +104,7 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
           <select
             value={selectedJpgRes}
             onChange={(e) => setSelectedJpgRes(Number(e.target.value) as JPGResolution)}
-            className="rounded-lg border border-(--color-border) bg-(--color-background) px-3 py-2 text-sm text-(--color-text-primary)"
+            className="rounded-lg border border-(--color-border) bg-(--color-background) px-3 py-2.5 text-sm text-(--color-text-primary) focus:border-(--color-border-focus) focus:outline-none"
             disabled={!isValid}
           >
             {JPG_RESOLUTIONS.map((res) => (
@@ -117,13 +113,13 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
               </option>
             ))}
           </select>
-          <button
+          <Button
             onClick={() => handleDownload('jpg', selectedJpgRes)}
             disabled={!isValid || isDownloading === 'jpg'}
-            className={secondaryButtonClass}
+            isLoading={isDownloading === 'jpg'}
           >
             {isDownloading === 'jpg' ? 'Downloading...' : 'Download JPG'}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -133,16 +129,16 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
           <span className="text-sm font-medium text-(--color-text-secondary) w-12">
             PDF
           </span>
-          <span className="text-xs text-(--color-text-muted)">
+          <span className="text-xs text-(--color-text-muted) mr-auto sm:mr-0">
             Print-ready A4 document
           </span>
-          <button
+          <Button
             onClick={() => handleDownload('pdf')}
             disabled={!isValid || isDownloading === 'pdf'}
-            className={secondaryButtonClass}
+            isLoading={isDownloading === 'pdf'}
           >
             {isDownloading === 'pdf' ? 'Downloading...' : 'Download PDF'}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -150,13 +146,15 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
       <hr className="border-(--color-border)" />
 
       {/* Download All */}
-      <button
+      <Button
+        variant="primary"
+        fullWidth
         onClick={handleDownloadAll}
         disabled={!isValid || isDownloading === 'all'}
-        className={`${primaryButtonClass} w-full`}
+        isLoading={isDownloading === 'all'}
       >
         {isDownloading === 'all' ? 'Downloading All Formats...' : 'Download All Formats'}
-      </button>
+      </Button>
     </div>
   );
 }

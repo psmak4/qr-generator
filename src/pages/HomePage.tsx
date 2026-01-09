@@ -1,12 +1,11 @@
 import { useState, useMemo } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShieldHalved, faGift, faBolt, faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
-import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import type { QRCodeType, QRData, FormData } from '../types';
 import QRTypeSelector from '../components/QRTypeSelector';
 import QRFormRenderer from '../components/QRFormRenderer';
 import QRPreview from '../components/QRPreview';
 import DownloadOptions from '../components/DownloadOptions';
+import FeatureCard from '../components/FeatureCard';
 import { generateQRData, isFormValid } from '../utils/qrDataGenerator';
 
 // Initial form data for each QR code type
@@ -169,26 +168,6 @@ export default function HomePage() {
           />
         </div>
       </div>
-    </div>
-  );
-}
-
-interface FeatureCardProps {
-  icon: IconDefinition;
-  title: string;
-  description: string;
-}
-
-function FeatureCard({ icon, title, description }: FeatureCardProps) {
-  return (
-    <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6 text-center">
-      <FontAwesomeIcon 
-        icon={icon} 
-        className="mb-3 h-8 w-8 text-(--color-primary)" 
-        aria-hidden="true" 
-      />
-      <h3 className="mb-2 font-medium text-(--color-text-primary)">{title}</h3>
-      <p className="text-sm text-(--color-text-secondary)">{description}</p>
     </div>
   );
 }

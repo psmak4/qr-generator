@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQrcode } from '@fortawesome/free-solid-svg-icons';
-import { generateQRCodeDataURL } from '../utils/download';
+import { useQRGenerator } from '../hooks/useQRGenerator';
 
 interface QRPreviewProps {
   data: string;
@@ -9,32 +8,7 @@ interface QRPreviewProps {
 }
 
 export default function QRPreview({ data, isValid }: QRPreviewProps) {
-  const [qrCodeImage, setQrCodeImage] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    if (!data || !isValid) {
-      setQrCodeImage(null);
-      return;
-    }
-
-    const generateQR = async () => {
-      setIsLoading(true);
-      try {
-        const dataURL = await generateQRCodeDataURL(data, 512);
-        setQrCodeImage(dataURL);
-      } catch (error) {
-        console.error('Failed to generate QR code:', error);
-        setQrCodeImage(null);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    // Debounce the QR code generation
-    const timer = setTimeout(generateQR, 150);
-    return () => clearTimeout(timer);
-  }, [data, isValid]);
+  const { qrCodeImage, isLoading } = useQRGenerator(data, isValid);
 
   return (
     <div className="flex flex-col items-center">
