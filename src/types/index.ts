@@ -20,6 +20,21 @@ export type JPGResolution = 512 | 1024 | 2048;
 // WiFi encryption types
 export type WifiEncryption = 'WPA' | 'WEP' | 'nopass';
 
+// Error Correction Levels
+export type QRErrorCorrectionLevel = 'L' | 'M' | 'Q' | 'H';
+
+// QR Code Color Options
+export interface QRColorOptions {
+  foreground: string;
+  background: string;
+}
+
+// QR Code Customization Options
+export interface QRCustomizationOptions {
+  colors: QRColorOptions;
+  errorCorrectionLevel: QRErrorCorrectionLevel;
+}
+
 // Form data types for each QR code type
 export interface URLFormData {
   url: string;

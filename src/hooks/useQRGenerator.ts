@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
 import { generateQRCodeDataURL } from '../utils/download';
+import type { QRCustomizationOptions } from '../types';
 
-export function useQRGenerator(data: string, isValid: boolean) {
+export function useQRGenerator(
+  data: string, 
+  isValid: boolean,
+  options?: QRCustomizationOptions
+) {
   const [qrCodeImage, setQrCodeImage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,7 +19,7 @@ export function useQRGenerator(data: string, isValid: boolean) {
     const generateQR = async () => {
       setIsLoading(true);
       try {
-        const dataURL = await generateQRCodeDataURL(data, 512);
+        const dataURL = await generateQRCodeDataURL(data, 512, options);
         setQrCodeImage(dataURL);
       } catch (error) {
         console.error('Failed to generate QR code:', error);
@@ -27,7 +32,7 @@ export function useQRGenerator(data: string, isValid: boolean) {
     // Debounce the QR code generation
     const timer = setTimeout(generateQR, 150);
     return () => clearTimeout(timer);
-  }, [data, isValid]);
+  }, [data, isValid, options]);
 
   return { qrCodeImage, isLoading };
 }

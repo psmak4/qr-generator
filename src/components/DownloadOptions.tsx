@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { downloadQRCode, downloadAllFormats } from '../utils/download';
 import { PNG_RESOLUTIONS, JPG_RESOLUTIONS } from '../constants';
-import type { DownloadFormat, PNGResolution, JPGResolution } from '../types';
+import type { DownloadFormat, PNGResolution, JPGResolution, QRCustomizationOptions } from '../types';
 import Button from './Button';
 
 interface DownloadOptionsProps {
   qrData: string;
   isValid: boolean;
+  options?: QRCustomizationOptions;
 }
 
-export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProps) {
+export default function DownloadOptions({ qrData, isValid, options }: DownloadOptionsProps) {
   const [isDownloading, setIsDownloading] = useState<string | null>(null);
   const [selectedPngRes, setSelectedPngRes] = useState<PNGResolution>(512);
   const [selectedJpgRes, setSelectedJpgRes] = useState<JPGResolution>(512);
@@ -19,7 +20,7 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
 
     setIsDownloading(format);
     try {
-      await downloadQRCode(qrData, format, 'qrcode', resolution);
+      await downloadQRCode(qrData, format, 'qrcode', resolution, options);
     } catch (error) {
       console.error(`Failed to download ${format}:`, error);
       alert(`Failed to download ${format}. Please try again.`);
@@ -33,7 +34,7 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
 
     setIsDownloading('all');
     try {
-      await downloadAllFormats(qrData, 'qrcode');
+      await downloadAllFormats(qrData, 'qrcode', options);
     } catch (error) {
       console.error('Failed to download all formats:', error);
       alert('Failed to download all formats. Please try again.');

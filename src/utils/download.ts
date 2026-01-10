@@ -1,21 +1,22 @@
 import QRCode from 'qrcode';
 import { saveAs } from 'file-saver';
-import type { DownloadFormat, PNGResolution, JPGResolution } from '../types';
+import type { DownloadFormat, PNGResolution, JPGResolution, QRCustomizationOptions } from '../types';
 
 /**
  * Generate QR code as a data URL (PNG)
  */
 export async function generateQRCodeDataURL(
   data: string,
-  size: number = 512
+  size: number = 512,
+  options?: QRCustomizationOptions
 ): Promise<string> {
   return QRCode.toDataURL(data, {
     width: size,
     margin: 2,
-    errorCorrectionLevel: 'M',
+    errorCorrectionLevel: options?.errorCorrectionLevel || 'M',
     color: {
-      dark: '#000000',
-      light: '#FFFFFF',
+      dark: options?.colors.foreground || '#000000',
+      light: options?.colors.background || '#FFFFFF',
     },
   });
 }
@@ -23,14 +24,17 @@ export async function generateQRCodeDataURL(
 /**
  * Generate QR code as SVG string
  */
-export async function generateQRCodeSVG(data: string): Promise<string> {
+export async function generateQRCodeSVG(
+  data: string,
+  options?: QRCustomizationOptions
+): Promise<string> {
   return QRCode.toString(data, {
     type: 'svg',
     margin: 2,
-    errorCorrectionLevel: 'M',
+    errorCorrectionLevel: options?.errorCorrectionLevel || 'M',
     color: {
-      dark: '#000000',
-      light: '#FFFFFF',
+      dark: options?.colors.foreground || '#000000',
+      light: options?.colors.background || '#FFFFFF',
     },
   });
 }
@@ -40,16 +44,17 @@ export async function generateQRCodeSVG(data: string): Promise<string> {
  */
 export async function generateQRCodeCanvas(
   data: string,
-  size: number = 512
+  size: number = 512,
+  options?: QRCustomizationOptions
 ): Promise<HTMLCanvasElement> {
   const canvas = document.createElement('canvas');
   await QRCode.toCanvas(canvas, data, {
     width: size,
     margin: 2,
-    errorCorrectionLevel: 'M',
+    errorCorrectionLevel: options?.errorCorrectionLevel || 'M',
     color: {
-      dark: '#000000',
-      light: '#FFFFFF',
+      dark: options?.colors.foreground || '#000000',
+      light: options?.colors.background || '#FFFFFF',
     },
   });
   return canvas;
@@ -61,9 +66,10 @@ export async function generateQRCodeCanvas(
 export async function downloadAsPNG(
   data: string,
   filename: string,
-  resolution: PNGResolution
+  resolution: PNGResolution,
+  options?: QRCustomizationOptions
 ): Promise<void> {
-  const dataURL = await generateQRCodeDataURL(data, resolution);
+  const dataURL = await generateQRCodeDataURL(data, resolution, options);
   const blob = dataURLToBlob(dataURL);
   saveAs(blob, `${filename}.png`);
 }
@@ -74,18 +80,20 @@ export async function downloadAsPNG(
 export async function downloadAsJPG(
   data: string,
   filename: string,
-  resolution: JPGResolution
+  resolution: JPGResolution,
+  options?: QRCustomizationOptions
 ): Promise<void> {
-  const canvas = await generateQRCodeCanvas(data, resolution);
+  const canvas = await generateQRCodeCanvas(data, resolution, options);
   
-  // Create a new canvas with white background for JPG
+  // Create a new canvas with the selected background color for JPG
+  // Note: JPG doesn't support transparency, so we use the user's background color
   const jpgCanvas = document.createElement('canvas');
   jpgCanvas.width = canvas.width;
   jpgCanvas.height = canvas.height;
   const ctx = jpgCanvas.getContext('2d');
   
   if (ctx) {
-    ctx.fillStyle = '#FFFFFF';
+    ctx.fillStyle = options?.colors.background || '#FFFFFF';
     ctx.fillRect(0, 0, jpgCanvas.width, jpgCanvas.height);
     ctx.drawImage(canvas, 0, 0);
   }
@@ -104,8 +112,12 @@ export async function downloadAsJPG(
 /**
  * Download QR code as SVG
  */
-export async function downloadAsSVG(data: string, filename: string): Promise<void> {
-  const svgString = await generateQRCodeSVG(data);
+export async function downloadAsSVG(
+  data: string, 
+  filename: string,
+  options?: QRCustomizationOptions
+): Promise<void> {
+  const svgString = await generateQRCodeSVG(data, options);
   const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
   saveAs(blob, `${filename}.svg`);
 }
@@ -113,9 +125,13 @@ export async function downloadAsSVG(data: string, filename: string): Promise<voi
 /**
  * Download QR code as PDF
  */
-export async function downloadAsPDF(data: string, filename: string): Promise<void> {
+export async function downloadAsPDF(
+  data: string, 
+  filename: string,
+  options?: QRCustomizationOptions
+): Promise<void> {
   const size = 1024; // High resolution for PDF
-  const dataURL = await generateQRCodeDataURL(data, size);
+  const dataURL = await generateQRCodeDataURL(data, size, options);
   
   // Dynamically import jsPDF to reduce initial bundle size
   const { jsPDF } = await import('jspdf');
@@ -146,20 +162,21 @@ export async function downloadQRCode(
   data: string,
   format: DownloadFormat,
   filename: string = 'qrcode',
-  resolution?: PNGResolution | JPGResolution
+  resolution?: PNGResolution | JPGResolution,
+  options?: QRCustomizationOptions
 ): Promise<void> {
   switch (format) {
     case 'png':
-      await downloadAsPNG(data, filename, (resolution as PNGResolution) || 512);
+      await downloadAsPNG(data, filename, (resolution as PNGResolution) || 512, options);
       break;
     case 'jpg':
-      await downloadAsJPG(data, filename, (resolution as JPGResolution) || 512);
+      await downloadAsJPG(data, filename, (resolution as JPGResolution) || 512, options);
       break;
     case 'svg':
-      await downloadAsSVG(data, filename);
+      await downloadAsSVG(data, filename, options);
       break;
     case 'pdf':
-      await downloadAsPDF(data, filename);
+      await downloadAsPDF(data, filename, options);
       break;
   }
 }
@@ -169,12 +186,13 @@ export async function downloadQRCode(
  */
 export async function downloadAllFormats(
   data: string,
-  filename: string = 'qrcode'
+  filename: string = 'qrcode',
+  options?: QRCustomizationOptions
 ): Promise<void> {
-  await downloadAsPNG(data, filename, 1024);
-  await downloadAsSVG(data, filename);
-  await downloadAsJPG(data, filename, 1024);
-  await downloadAsPDF(data, filename);
+  await downloadAsPNG(data, filename, 1024, options);
+  await downloadAsSVG(data, filename, options);
+  await downloadAsJPG(data, filename, 1024, options);
+  await downloadAsPDF(data, filename, options);
 }
 
 /**

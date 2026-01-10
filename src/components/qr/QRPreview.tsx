@@ -1,14 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQrcode } from '@fortawesome/free-solid-svg-icons';
 import { useQRGenerator } from '../../hooks/useQRGenerator';
+import type { QRCustomizationOptions } from '../../types';
 
 interface QRPreviewProps {
   data: string;
   isValid: boolean;
+  options?: QRCustomizationOptions;
 }
 
-export default function QRPreview({ data, isValid }: QRPreviewProps) {
-  const { qrCodeImage, isLoading } = useQRGenerator(data, isValid);
+export default function QRPreview({ data, isValid, options }: QRPreviewProps) {
+  const { qrCodeImage, isLoading } = useQRGenerator(data, isValid, options);
 
   return (
     <div className="flex flex-col items-center">

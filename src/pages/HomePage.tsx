@@ -1,11 +1,10 @@
-import { useState, useMemo } from 'react';
-// import { faShieldHalved, faGift, faBolt, faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
-import type { QRCodeType, QRData, FormData } from '../types';
+import { useState, useMemo, useEffect } from 'react';
+import type { QRCodeType, QRData, FormData, QRCustomizationOptions } from '../types';
 import QRTypeSelector from '../components/qr/QRTypeSelector';
 import QRFormRenderer from '../components/qr/QRFormRenderer';
 import QRPreview from '../components/qr/QRPreview';
+import QRCustomization from '../components/QRCustomization';
 import DownloadOptions from '../components/DownloadOptions';
-// import FeatureCard from '../components/FeatureCard';
 import { generateQRData, isFormValid } from '../utils/qrDataGenerator';
 import { HomePageIntro } from '../components/HomePageIntro';
 import { HomePageDetailedContent } from '../components/HomePageDetailedContent';
@@ -52,6 +51,28 @@ const getInitialQRData = (type: QRCodeType): QRData => {
 
 export default function HomePage() {
   const [qrState, setQrState] = useState<QRData>(getInitialQRData('url'));
+  
+  const [customizationOptions, setCustomizationOptions] = useState<QRCustomizationOptions>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('qr-customization');
+      if (saved) {
+        try {
+          return JSON.parse(saved);
+        } catch (e) {
+          console.error('Failed to parse saved customization options', e);
+        }
+      }
+    }
+    return {
+      colors: { foreground: '#000000', background: '#ffffff' },
+      errorCorrectionLevel: 'M',
+    };
+  });
+
+  // Save to local storage when changed
+  useEffect(() => {
+    localStorage.setItem('qr-customization', JSON.stringify(customizationOptions));
+  }, [customizationOptions]);
 
   const handleTypeChange = (type: QRCodeType) => {
     setQrState(getInitialQRData(type));
@@ -115,6 +136,14 @@ export default function HomePage() {
               onFormChange={handleFormChange}
             />
           </div>
+
+          {/* Customization */}
+          <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6">
+            <QRCustomization
+              options={customizationOptions}
+              onChange={setCustomizationOptions}
+            />
+          </div>
         </div>
 
         {/* Right Panel - Preview and Download */}
@@ -124,12 +153,20 @@ export default function HomePage() {
             <h2 className="mb-4 text-lg font-medium text-(--color-text-primary)">
               Preview
             </h2>
-            <QRPreview data={qrDataString} isValid={isValid} />
+            <QRPreview 
+              data={qrDataString} 
+              isValid={isValid} 
+              options={customizationOptions}
+            />
           </div>
 
           {/* Download Options */}
           <div className="rounded-xl border border-(--color-border) bg-(--color-background) p-6">
-            <DownloadOptions qrData={qrDataString} isValid={isValid} />
+            <DownloadOptions 
+              qrData={qrDataString} 
+              isValid={isValid} 
+              options={customizationOptions}
+            />
           </div>
         </div>
       </div>
