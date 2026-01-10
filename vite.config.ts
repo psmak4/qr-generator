@@ -44,6 +44,12 @@ export default defineConfig({
     }
   ],
   build: {
+    modulePreload: {
+      resolveDependencies(_filename, deps) {
+        // Prevent preloading of the PDF vendor chunk to save bandwidth on initial load
+        return deps.filter(dep => !dep.includes('vendor-pdf'));
+      },
+    },
     rollupOptions: {
       output: {
         manualChunks: {
