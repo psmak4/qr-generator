@@ -59,6 +59,7 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
             onChange={(e) => setSelectedPngRes(Number(e.target.value) as PNGResolution)}
             className="rounded-lg border border-(--color-border) bg-(--color-background) px-3 py-2.5 text-sm text-(--color-text-primary) focus:border-(--color-border-focus) focus:outline-none"
             disabled={!isValid}
+            aria-label="PNG Resolution"
           >
             {PNG_RESOLUTIONS.map((res) => (
               <option key={res} value={res}>
@@ -106,6 +107,7 @@ export default function DownloadOptions({ qrData, isValid }: DownloadOptionsProp
             onChange={(e) => setSelectedJpgRes(Number(e.target.value) as JPGResolution)}
             className="rounded-lg border border-(--color-border) bg-(--color-background) px-3 py-2.5 text-sm text-(--color-text-primary) focus:border-(--color-border-focus) focus:outline-none"
             disabled={!isValid}
+            aria-label="JPG Resolution"
           >
             {JPG_RESOLUTIONS.map((res) => (
               <option key={res} value={res}>
