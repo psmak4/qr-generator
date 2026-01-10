@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQrcode } from '@fortawesome/free-solid-svg-icons';
-import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   return (
@@ -12,9 +11,20 @@ export default function Header() {
             <FontAwesomeIcon icon={faQrcode} className="h-6 w-6 text-(--color-primary)" aria-hidden="true" />
             <span>The Best QR Generator</span>
           </Link>
-          
-          <nav className="flex items-center gap-4">
-            <ThemeToggle />
+
+          <nav className="flex gap-6">
+            <Link 
+              to="/" 
+              className="text-base font-medium text-(--color-text-secondary) hover:text-(--color-text-primary) transition-colors"
+            >
+              Home
+            </Link>
+            <Link 
+              to="/about" 
+              className="text-base font-medium text-(--color-text-secondary) hover:text-(--color-text-primary) transition-colors"
+            >
+              About
+            </Link>
           </nav>
         </div>
       </div>

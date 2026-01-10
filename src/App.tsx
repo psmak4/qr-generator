@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeProvider';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { HomePage, PrivacyPolicyPage, TermsOfServicePage } from './pages';
+import { HomePage, AboutPage, PrivacyPolicyPage, TermsOfServicePage } from './pages';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
               <Route path="/terms" element={<TermsOfServicePage />} />
             </Routes>
