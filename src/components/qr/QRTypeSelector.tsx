@@ -10,9 +10,9 @@ interface QRTypeSelectionProps {
 export default function QRTypeSelector({ selectedType, onTypeChange }: QRTypeSelectionProps) {
   return (
     <div className="space-y-3">
-      <label className="block text-sm font-medium text-(--color-text-primary)">
+      <h2 className="mb-4 text-lg font-medium text-(--color-text-primary)">
         QR Code Type
-      </label>
+      </h2>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
         {QR_CODE_TYPES.map((type) => (
           <button

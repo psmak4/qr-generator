@@ -1,12 +1,14 @@
 import { useState, useMemo } from 'react';
-import { faShieldHalved, faGift, faBolt, faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
+// import { faShieldHalved, faGift, faBolt, faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
 import type { QRCodeType, QRData, FormData } from '../types';
 import QRTypeSelector from '../components/qr/QRTypeSelector';
 import QRFormRenderer from '../components/qr/QRFormRenderer';
 import QRPreview from '../components/qr/QRPreview';
 import DownloadOptions from '../components/DownloadOptions';
-import FeatureCard from '../components/FeatureCard';
+// import FeatureCard from '../components/FeatureCard';
 import { generateQRData, isFormValid } from '../utils/qrDataGenerator';
+import { HomePageIntro } from '../components/HomePageIntro';
+import { HomePageDetailedContent } from '../components/HomePageDetailedContent';
 
 // Initial form data for each QR code type
 const getInitialQRData = (type: QRCodeType): QRData => {
@@ -80,15 +82,7 @@ export default function HomePage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Page Header */}
-      <div className="mb-8 text-center">
-        <h1 className="mb-4 text-3xl font-bold text-(--color-text-primary) sm:text-4xl">
-          The Best QR Code Generator
-        </h1>
-        <p className="text-lg text-(--color-text-secondary)">
-          Generate QR codes for URLs, text, contacts, WiFi, and more. No signup required.
-        </p>
-      </div>
+      <HomePageIntro />
 
       {/* Main Content Grid */}
       <div className="grid gap-8 lg:grid-cols-2">
@@ -140,34 +134,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="mt-16">
-        <h2 className="mb-8 text-center text-2xl font-bold text-(--color-text-primary)">
-          Why Use Our QR Generator?
-        </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <FeatureCard
-            icon={faShieldHalved}
-            title="100% Private"
-            description="All processing happens in your browser. Your data never leaves your device."
-          />
-          <FeatureCard
-            icon={faGift}
-            title="Completely Free"
-            description="No hidden costs, no watermarks, no account required. Just generate and download."
-          />
-          <FeatureCard
-            icon={faBolt}
-            title="Instant Generation"
-            description="QR codes generate in real-time as you type. No waiting, no delays."
-          />
-          <FeatureCard
-            icon={faFileArrowDown}
-            title="Multiple Formats"
-            description="Download in PNG, SVG, JPG, or PDF. Perfect for any use case."
-          />
-        </div>
-      </div>
+      <HomePageDetailedContent />
     </div>
   );
 }
