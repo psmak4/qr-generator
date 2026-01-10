@@ -47,7 +47,7 @@ export default defineConfig({
     modulePreload: {
       resolveDependencies(_filename, deps) {
         // Prevent preloading of the PDF vendor chunk to save bandwidth on initial load
-        return deps.filter(dep => !dep.includes('vendor-pdf'));
+        return deps.filter(dep => !dep.includes('vendor-pdf') && !dep.includes('jspdf'));
       },
     },
     rollupOptions: {
@@ -55,7 +55,6 @@ export default defineConfig({
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
           'vendor-qr': ['qrcode'],
-          'vendor-pdf': ['jspdf'],
         },
       },
     },
