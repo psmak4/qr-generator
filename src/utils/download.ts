@@ -1,6 +1,5 @@
 import QRCode from 'qrcode';
 import { saveAs } from 'file-saver';
-import { jsPDF } from 'jspdf';
 import type { DownloadFormat, PNGResolution, JPGResolution } from '../types';
 
 /**
@@ -117,6 +116,9 @@ export async function downloadAsSVG(data: string, filename: string): Promise<voi
 export async function downloadAsPDF(data: string, filename: string): Promise<void> {
   const size = 1024; // High resolution for PDF
   const dataURL = await generateQRCodeDataURL(data, size);
+  
+  // Dynamically import jsPDF to reduce initial bundle size
+  const { jsPDF } = await import('jspdf');
   
   // Create PDF with the QR code centered
   const pdf = new jsPDF({
