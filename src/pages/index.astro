@@ -1,0 +1,39 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import QRGenerator from '../components/QRGenerator';
+import HomePageDetailedContent from '../components/HomePageDetailedContent.astro';
+---
+
+<MainLayout 
+  title="The Best QR Generator | Create QR Codes Online"
+  description="Generate QR codes for URLs, text, emails, phone numbers, and more. Free, privacy-focused, no account required."
+>
+  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <section class="max-w-4xl mx-auto px-4 pt-8 pb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-(--color-text-primary) mb-4 text-center">
+        The Best QR Generator
+      </h1>
+      
+      <div class="space-y-3 text-(--color-text-primary) text-justify">
+        <p class="text-lg md:text-xl leading-relaxed">
+          Create professional QR codes instantly with our free QR code generator. 
+          Generate QR codes for URLs, WiFi networks, business cards (vCard), email, 
+          SMS, phone numbers, and plain text - completely free with no signup, no 
+          watermarks, and 100% private processing in your browser.
+        </p>
+        
+        <p class="text-base md:text-lg leading-relaxed text-(--color-text-secondary)">
+          Download your QR codes in multiple formats (PNG, SVG, JPG, PDF) at various 
+          resolutions. Perfect for business cards, marketing materials, restaurant menus, 
+          event tickets, and more. Start creating QR codes now - no registration required.
+        </p>
+      </div>
+    </section>
+    
+    <!-- React island: only this component gets hydrated -->
+    <QRGenerator client:load />
+    
+    <!-- Detailed content as static HTML -->
+    <HomePageDetailedContent />
+  </div>
+</MainLayout>

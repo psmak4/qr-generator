@@ -32,9 +32,9 @@ export default function QRCustomization({ options, onChange }: QRCustomizationPr
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {/* Colors */}
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-(--color-text-secondary)">
+          <div className="block text-sm font-medium text-(--color-text-secondary)">
             Colors
-          </label>
+          </div>
           <div className="flex gap-4">
             <div className="flex flex-col gap-1">
               <label htmlFor="fg-color" className="text-xs text-(--color-text-muted)">Foreground</label>

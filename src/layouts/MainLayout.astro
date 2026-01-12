@@ -1,13 +1,29 @@
-<!doctype html>
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = 'The Best QR Generator',
+  description = 'Create QR codes for free. Privacy-focused, no account required.'
+} = Astro.props;
+---
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>Free QR Code Generator - No Signup, No Watermark | The Best QR Generator</title>
+    <title>{title}</title>
     <meta name="title" content="Free QR Code Generator - No Signup, No Watermark | The Best QR Generator" />
-    <meta name="description" content="Create free QR codes instantly for URLs, WiFi, vCard, email, SMS, and more. 100% private - all processing in your browser. No signup, no watermarks, no limits. Download in PNG, SVG, JPG, or PDF." />
+    <meta name="description" content={description} />
     <meta name="theme-color" content="#2563eb" />
     
     <!-- Canonical URL -->
@@ -47,9 +63,10 @@
 
     <!-- Google AdSense -->
     <meta name="google-adsense-account" content="ca-pub-1675310421172493">
+    <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675310421172493" crossorigin="anonymous"></script>
 
     <!-- Structured Data - JSON-LD -->
-    <script type="application/ld+json">
+    <script is:inline type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
@@ -93,9 +110,21 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675310421172493" crossorigin="anonymous"></script>
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2639e1df63a84c8f9a861299f416ffc7"}'></script>
+    <div class="flex min-h-screen flex-col bg-(--color-background)">
+      <Header />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <script>
+      // Theme initialization (runs immediately to prevent flash)
+      let theme = localStorage.getItem('theme');
+      if (!theme || theme === 'system') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.classList.add(theme);
+    </script>
+    <script is:inline defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2639e1df63a84c8f9a861299f416ffc7"}'></script>
   </body>
 </html>

@@ -1,0 +1,44 @@
+---
+import ThemeToggle from './ThemeToggle';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-(--color-border) bg-(--color-surface)">
+  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
+      <p class="text-sm text-(--color-text-secondary)">
+        © {currentYear} The Best QR Generator. All rights reserved.
+      </p>
+      
+      <div class="flex flex-col items-center gap-6 lg:flex-row">
+        <nav class="flex gap-6">
+          <a
+            href="/"
+            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary)"
+          >
+            Home
+          </a>
+          <a
+            href="/about"
+            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary)"
+          >
+            About
+          </a>
+          <a
+            href="/privacy"
+            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary)"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="/terms"
+            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary)"
+          >
+            Terms of Service
+          </a>
+        </nav>
+        <ThemeToggle client:load />
+      </div>
+    </div>
+  </div>
+</footer>

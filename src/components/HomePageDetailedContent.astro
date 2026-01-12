@@ -1,0 +1,460 @@
+---
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGift,
+  faUserSlash,
+  faShieldHalved,
+  faCheck,
+  faFileArrowDown,
+  faBolt,
+  faLink,
+  faWifi,
+  faAddressCard,
+  faEnvelope,
+  faComment,
+  faPhone,
+  faFileLines,
+  faUtensils,
+  faBriefcase,
+  faTicket,
+  faBox,
+  faMobileScreenButton,
+} from '@fortawesome/free-solid-svg-icons';
+---
+
+<section class="max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-(--color-border)">
+  {/* Why Choose Section */}
+  <div class="mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-(--color-text-primary) mb-6 text-center">
+      Why Choose Our QR Code Generator?
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-(--color-background) p-6 rounded-lg border border-(--color-border) hover:border-blue-300 transition-colors">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-3 flex items-center gap-2">
+          <FontAwesomeIcon icon={faGift} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          Completely Free
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          No hidden costs, no premium tiers, and no feature limits. Every feature 
+          is available to everyone, forever. Create unlimited QR codes without 
+          paying a cent.
+        </p>
+      </div>
+
+      <div class="bg-(--color-background) p-6 rounded-lg border border-(--color-border) hover:border-blue-300 transition-colors">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-3 flex items-center gap-2">
+          <FontAwesomeIcon icon={faUserSlash} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          No Signup Required
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Start generating QR codes immediately. No email verification, no password 
+          creation, no personal information needed. Just visit the site and create 
+          your QR code.
+        </p>
+      </div>
+
+      <div class="bg-(--color-background) p-6 rounded-lg border border-(--color-border) hover:border-blue-300 transition-colors">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-3 flex items-center gap-2">
+          <FontAwesomeIcon icon={faShieldHalved} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          100% Private
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Your data never leaves your browser. All QR code generation happens
+          client-side using JavaScript. We don't see, store, or transmit any 
+          of the information you enter.
+        </p>
+      </div>
+
+      <div class="bg-(--color-background) p-6 rounded-lg border border-(--color-border) hover:border-blue-300 transition-colors">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-3 flex items-center gap-2">
+          <FontAwesomeIcon icon={faCheck} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          No Watermarks
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Clean, professional QR codes with no branding or watermarks. Your QR 
+          codes contain only the data you input - perfect for business and 
+          professional use.
+        </p>
+      </div>
+
+      <div class="bg-(--color-background) p-6 rounded-lg border border-(--color-border) hover:border-blue-300 transition-colors">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-3 flex items-center gap-2">
+          <FontAwesomeIcon icon={faFileArrowDown} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          Multiple Formats
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Download QR codes as PNG, SVG, JPG, or PDF. Choose from multiple 
+          resolutions (256px to 2048px) to match your specific needs, from web 
+          use to large format printing.
+        </p>
+      </div>
+
+      <div class="bg-(--color-background) p-6 rounded-lg border border-(--color-border) hover:border-blue-300 transition-colors">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-3 flex items-center gap-2">
+          <FontAwesomeIcon icon={faBolt} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          Instant Generation
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          QR codes generate in real-time as you type. See your QR code update 
+          instantly and download immediately. No waiting, no processing delays.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Supported Types Section */}
+  <div class="mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-(--color-text-primary) mb-6 text-center">
+      Supported QR Code Types
+    </h2>
+    
+    <p class="text-lg text-(--color-text-secondary) mb-6 leading-relaxed text-justify">
+      Our QR code generator supports all the most popular QR code types for both 
+      personal and business use. Each type is optimized to work with standard QR 
+      code readers on iOS and Android devices.
+    </p>
+
+    <div class="space-y-4">
+      <div class="bg-linear-to-r from-blue-50 to-(--color-background) dark:from-blue-950/20 dark:to-(--color-background) p-6 rounded-lg border border-blue-100 dark:border-blue-900/30">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2 flex items-center gap-2">
+          <FontAwesomeIcon icon={faLink} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          URL / Website QR Codes
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Create QR codes that link directly to any website. Perfect for marketing 
+          campaigns, business cards, product packaging, or anywhere you want to drive 
+          traffic to your website. When scanned, users are taken directly to your URL.
+        </p>
+      </div>
+
+      <div class="bg-linear-to-r from-blue-50 to-(--color-background) dark:from-blue-950/20 dark:to-(--color-background) p-6 rounded-lg border border-blue-100 dark:border-blue-900/30">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2 flex items-center gap-2">
+          <FontAwesomeIcon icon={faWifi} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          WiFi QR Codes
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Share WiFi network credentials instantly. Customers and guests can connect 
+          to your network by simply scanning the QR code - no need to manually type 
+          complex passwords. Supports WPA, WPA2, and WEP encryption.
+        </p>
+      </div>
+
+      <div class="bg-linear-to-r from-blue-50 to-(--color-background) dark:from-blue-950/20 dark:to-(--color-background) p-6 rounded-lg border border-blue-100 dark:border-blue-900/30">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2 flex items-center gap-2">
+          <FontAwesomeIcon icon={faAddressCard} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          vCard / Contact QR Codes
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Create digital business cards that can be scanned and saved directly to 
+          contacts. Include name, phone number, email, company, job title, address, 
+          and website. Perfect for networking events and professional use.
+        </p>
+      </div>
+
+      <div class="bg-linear-to-r from-blue-50 to-(--color-background) dark:from-blue-950/20 dark:to-(--color-background) p-6 rounded-lg border border-blue-100 dark:border-blue-900/30">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2 flex items-center gap-2">
+          <FontAwesomeIcon icon={faEnvelope} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          Email QR Codes
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Generate QR codes that open a new email with pre-filled recipient, subject, 
+          and message body. Great for customer support, feedback forms, or making it 
+          easy for people to contact you.
+        </p>
+      </div>
+
+      <div class="bg-linear-to-r from-blue-50 to-(--color-background) dark:from-blue-950/20 dark:to-(--color-background) p-6 rounded-lg border border-blue-100 dark:border-blue-900/30">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2 flex items-center gap-2">
+          <FontAwesomeIcon icon={faComment} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          SMS / Text Message QR Codes
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Create QR codes that open a text message with a pre-filled phone number and 
+          message. Perfect for marketing campaigns, contest entries, or quick customer 
+          responses.
+        </p>
+      </div>
+
+      <div class="bg-linear-to-r from-blue-50 to-(--color-background) dark:from-blue-950/20 dark:to-(--color-background) p-6 rounded-lg border border-blue-100 dark:border-blue-900/30">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2 flex items-center gap-2">
+          <FontAwesomeIcon icon={faPhone} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          Phone Number QR Codes
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Generate QR codes that initiate a phone call when scanned. Perfect for
+          customer service, business cards, or any situation where you want to make it 
+          easy for people to call you.
+        </p>
+      </div>
+
+      <div class="bg-linear-to-r from-blue-50 to-(--color-background) dark:from-blue-950/20 dark:to-(--color-background) p-6 rounded-lg border border-blue-100 dark:border-blue-900/30">
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2 flex items-center gap-2">
+          <FontAwesomeIcon icon={faFileLines} className="text-blue-600 h-5 w-5" aria-hidden="true" />
+          Plain Text QR Codes
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Encode any text content into a QR code. Great for serial numbers, codes,
+          instructions, or any information you want to share in a scannable format.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* How It Works Section */}
+  <div class="mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-(--color-text-primary) mb-6 text-center">
+      How It Works
+    </h2>
+    
+    <p class="text-lg text-(--color-text-secondary) mb-8 leading-relaxed text-justify">
+      Creating QR codes with our generator is simple and takes just a few seconds. 
+      Follow these easy steps to create your QR code:
+    </p>
+
+    <div class="space-y-6">
+      <div class="flex gap-4">
+        <div class="shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+          1
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+            Select Your QR Code Type
+          </h3>
+          <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+            Choose from URL, WiFi, vCard, Email, SMS, Phone, or Text. Each type 
+            has its own specialized form fields optimized for that data type.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+          2
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+            Enter Your Information
+          </h3>
+          <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+            Fill in the form fields with your data. For example, enter your website 
+            URL, WiFi credentials, contact information, or whatever content you want 
+            to encode in the QR code.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+          3
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+            Watch Your QR Code Generate
+          </h3>
+          <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+            Your QR code generates automatically in real-time as you type. You'll 
+            see the QR code update instantly in the preview area. All processing 
+            happens locally in your browser - your data never leaves your device.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+          4
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+            Download Your QR Code
+          </h3>
+          <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+            Choose your preferred format (PNG, SVG, JPG, or PDF) and resolution. 
+            Click the download button and your QR code is immediately saved to your 
+            device. Use it in print materials, websites, presentations, or anywhere 
+            else you need it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 p-6 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900/30 rounded-lg">
+      <p class="text-blue-950 dark:text-blue-200 leading-relaxed">
+        <strong class="text-blue-950 dark:text-blue-100">Pro Tip:</strong> Always test your QR 
+        code before printing or sharing widely. Scan it with your phone's camera 
+        app to make sure it leads to the correct destination and works as expected.
+      </p>
+    </div>
+  </div>
+
+  {/* Use Cases Section */}
+  <div class="mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-(--color-text-primary) mb-6 text-center">
+      Popular Use Cases
+    </h2>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="text-center p-6">
+        <div class="text-4xl mb-3 flex justify-center">
+          <FontAwesomeIcon icon={faUtensils} className="text-blue-600 h-8 w-8" aria-hidden="true" />
+        </div>
+        <h3 class="text-lg font-semibold text-(--color-text-primary) mb-2">
+          Restaurant Menus
+        </h3>
+        <p class="text-(--color-text-secondary) text-sm">
+          Create contactless digital menus that customers can access by scanning
+        </p>
+      </div>
+
+      <div class="text-center p-6">
+        <div class="text-4xl mb-3 flex justify-center">
+          <FontAwesomeIcon icon={faBriefcase} className="text-blue-600 h-8 w-8" aria-hidden="true" />
+        </div>
+        <h3 class="text-lg font-semibold text-(--color-text-primary) mb-2">
+          Business Cards
+        </h3>
+        <p class="text-(--color-text-secondary) text-sm">
+          Add vCard QR codes to share contact info instantly at networking events
+        </p>
+      </div>
+
+      <div class="text-center p-6">
+        <div class="text-4xl mb-3 flex justify-center">
+          <FontAwesomeIcon icon={faTicket} className="text-blue-600 h-8 w-8" aria-hidden="true" />
+        </div>
+        <h3 class="text-lg font-semibold text-(--color-text-primary) mb-2">
+          Event Tickets
+        </h3>
+        <p class="text-(--color-text-secondary) text-sm">
+          Generate QR codes for event registration, check-in, and information
+        </p>
+      </div>
+
+      <div class="text-center p-6">
+        <div class="text-4xl mb-3 flex justify-center">
+          <FontAwesomeIcon icon={faBox} className="text-blue-600 h-8 w-8" aria-hidden="true" />
+        </div>
+        <h3 class="text-lg font-semibold text-(--color-text-primary) mb-2">
+          Product Packaging
+        </h3>
+        <p class="text-(--color-text-secondary) text-sm">
+          Link to product info, instructions, or warranty registration pages
+        </p>
+      </div>
+
+      <div class="text-center p-6">
+        <div class="text-4xl mb-3 flex justify-center">
+          <FontAwesomeIcon icon={faMobileScreenButton} className="text-blue-600 h-8 w-8" aria-hidden="true" />
+        </div>
+        <h3 class="text-lg font-semibold text-(--color-text-primary) mb-2">
+          App Downloads
+        </h3>
+        <p class="text-(--color-text-secondary) text-sm">
+          Direct users to your app on the App Store or Google Play
+        </p>
+      </div>
+
+      <div class="text-center p-6">
+        <div class="text-4xl mb-3 flex justify-center">
+          <FontAwesomeIcon icon={faWifi} className="text-blue-600 h-8 w-8" aria-hidden="true" />
+        </div>
+        <h3 class="text-lg font-semibold text-(--color-text-primary) mb-2">
+          Guest WiFi
+        </h3>
+        <p class="text-(--color-text-secondary) text-sm">
+          Let visitors connect to your WiFi network without typing passwords
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* FAQ Section */}
+  <div class="mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-(--color-text-primary) mb-6 text-center">
+      Frequently Asked Questions
+    </h2>
+    
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+          Are QR codes really free?
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Yes! Our QR code generator is completely free with no hidden costs, 
+          limits, or premium features. Create as many QR codes as you need, 
+          whenever you need them.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+          Do QR codes expire?
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          No, QR codes generated with our tool never expire. The QR code contains 
+          your data directly - it's not a redirect or short link that could expire. 
+          Your QR code will work forever.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+          Can I use these QR codes commercially?
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Absolutely! You can use QR codes generated with our tool for any purpose, 
+          including commercial use. There are no restrictions or licensing fees.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+          What format should I use for printing?
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          For professional printing, we recommend SVG format as it's vector-based 
+          and scales to any size without losing quality. For large format printing, 
+          use PNG at 2048px or higher. PDF is also great for print materials.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+          Is my data really private?
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          Yes! All QR code generation happens entirely in your web browser using 
+          client-side JavaScript. Your data is never transmitted to our servers or 
+          any third party. Once you close the browser tab, your data is gone.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-(--color-text-primary) mb-2">
+          What's the maximum amount of data I can encode?
+        </h3>
+        <p class="text-(--color-text-secondary) leading-relaxed text-justify">
+          QR codes can theoretically hold up to 4,296 alphanumeric characters, but 
+          we recommend keeping your data concise. Smaller amounts of data create 
+          simpler QR codes that are easier to scan reliably.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Final CTA */}
+  <div class="text-center p-8 bg-linear-to-r from-blue-600 to-blue-700 rounded-2xl text-white">
+    <h2 class="text-3xl font-bold mb-4">
+      Ready to Create Your QR Code?
+    </h2>
+    <p class="text-xl mb-6 text-blue-100">
+      Start generating professional QR codes for free in seconds
+    </p>
+    <button
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="px-8 py-4 bg-white text-blue-600 font-bold text-lg rounded-lg hover:bg-blue-50 transition-colors shadow-lg cursor-pointer"
+    >
+      Get Started Now
+    </button>
+  </div>
+</section>

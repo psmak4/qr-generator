@@ -1,5 +1,6 @@
 import QRCode from 'qrcode';
-import { saveAs } from 'file-saver';
+import FileSaver from 'file-saver';
+const { saveAs } = FileSaver;
 import type { DownloadFormat, PNGResolution, JPGResolution, QRCustomizationOptions } from '../types';
 
 /**

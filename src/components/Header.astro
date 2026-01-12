@@ -1,0 +1,20 @@
+---
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQrcode } from '@fortawesome/free-solid-svg-icons';
+---
+
+<header class="border-b border-(--color-border) bg-(--color-background) sticky top-0 z-50">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href="/" class="flex items-center gap-2 text-2xl font-semibold">
+        <FontAwesomeIcon icon={faQrcode} className="h-6 w-6 text-blue-600" />
+        <span>The Best QR Generator</span>
+      </a>
+      
+      <nav class="flex items-center gap-6">
+        <a href="/" class="text-lg font-medium hover:text-(--color-primary)">Home</a>
+        <a href="/about" class="text-lg font-medium hover:text-(--color-primary)">About</a>
+      </nav>
+    </div>
+  </div>
+</header>
