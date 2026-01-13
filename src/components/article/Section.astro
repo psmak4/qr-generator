@@ -1,0 +1,15 @@
+---
+export interface Props {
+  background?: boolean;
+  id?: string;
+}
+
+const { background = false, id } = Astro.props;
+---
+
+<section 
+  id={id}
+  class={`my-12 rounded-lg p-8 ${background ? 'bg-(--color-hover)' : ''}`}
+>
+  <slot />
+</section>

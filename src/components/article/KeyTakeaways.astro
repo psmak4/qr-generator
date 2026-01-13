@@ -1,0 +1,16 @@
+---
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBullseye } from '@fortawesome/free-solid-svg-icons';
+---
+
+<div class="my-8 rounded-lg border-2 border-(--color-primary) bg-blue-50 p-6 dark:bg-blue-950/30">
+  <h3 class="mb-4 flex items-center gap-2 text-xl font-bold text-(--color-text-primary)">
+    <span>
+      <FontAwesomeIcon icon={faBullseye} />
+    </span>
+    <span>Key Takeaways</span>
+  </h3>
+  <div class="space-y-2 text-(--color-text-secondary)">
+    <slot />
+  </div>
+</div>

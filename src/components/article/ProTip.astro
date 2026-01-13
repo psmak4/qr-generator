@@ -1,0 +1,18 @@
+---
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBullseye } from '@fortawesome/free-solid-svg-icons';
+
+const { title = "Pro Tip" } = Astro.props;
+---
+
+<div class="my-6 rounded-lg bg-linear-to-r from-purple-50 to-pink-50 p-6 dark:from-purple-950/30 dark:to-pink-950/30">
+  <div class="mb-2 flex items-center gap-2">
+    <span class="text-2xl">
+      <FontAwesomeIcon icon={faBullseye} />
+    </span>
+    <span class="font-semibold text-(--color-text-primary)">{title}</span>
+  </div>
+  <div class="text-(--color-text-secondary)">
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,20 @@
+---
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+
+const { title } = Astro.props;
+---
+
+<div class="my-6 rounded-lg border border-(--color-border) bg-(--color-background) p-6 shadow-sm">
+  {title && (
+    <div class="mb-3 flex items-center gap-2 font-semibold text-(--color-text-primary)">
+      <span class="text-xl">
+        <FontAwesomeIcon icon={faPenToSquare} />
+      </span>
+      <span>{title}</span>
+    </div>
+  )}
+  <div class="text-(--color-text-secondary)">
+    <slot />
+  </div>
+</div>

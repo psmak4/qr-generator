@@ -1,0 +1,39 @@
+---
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLightbulb, faWandMagicSparkles, faTriangleExclamation, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+
+export interface Props {
+  type?: 'info' | 'tip' | 'warning' | 'success';
+  title?: string;
+}
+
+const { type = 'info', title } = Astro.props;
+
+const styles = {
+  info: 'border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30',
+  tip: 'border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950/30',
+  warning: 'border-amber-200 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/30',
+  success: 'border-emerald-200 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/30',
+};
+
+const icons = {
+  info: faLightbulb,
+  tip: faWandMagicSparkles,
+  warning: faTriangleExclamation,
+  success: faCircleCheck,
+};
+---
+
+<div class={`my-6 rounded-lg border-l-4 p-6 ${styles[type]}`}>
+  {title && (
+    <div class="mb-2 flex items-center gap-2 font-semibold text-(--color-text-primary)">
+      <span class="text-xl">
+        <FontAwesomeIcon icon={icons[type]} />
+      </span>
+      <span>{title}</span>
+    </div>
+  )}
+  <div class="text-(--color-text-secondary)">
+    <slot />
+  </div>
+</div>

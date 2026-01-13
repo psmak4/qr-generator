@@ -1,0 +1,33 @@
+---
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
+export interface Props {
+  stat: string;
+  label: string;
+  source?: string;
+  sourceUrl?: string;
+}
+
+const { stat, label, source, sourceUrl } = Astro.props;
+---
+
+<div class="my-8 rounded-lg border border-(--color-border) bg-linear-to-br from-blue-50 to-indigo-50 p-6 text-center dark:from-blue-950/30 dark:to-indigo-950/30">
+  <div class="mb-2 text-4xl font-bold text-(--color-primary)">
+    {stat}
+  </div>
+  <div class="mb-2 text-lg text-(--color-text-primary)">
+    {label}
+  </div>
+  {source && (
+    <div class="text-sm text-(--color-text-muted)">
+      {sourceUrl ? (
+        <a href={sourceUrl} class="hover:text-(--color-primary)" target="_blank" rel="noopener">
+          Source: {source} <FontAwesomeIcon icon={faArrowRight} className="ml-1 text-xs" />
+        </a>
+      ) : (
+        <span>Source: {source}</span>
+      )}
+    </div>
+  )}
+</div>

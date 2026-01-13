@@ -1,0 +1,22 @@
+---
+export interface Props {
+  icon?: string;
+}
+
+const { icon = '✓' } = Astro.props;
+---
+
+<ul class="my-6 space-y-3">
+  <slot />
+</ul>
+
+<style>
+  ul :global(li) {
+    @apply flex gap-3 text-(--color-text-secondary);
+  }
+  
+  ul :global(li::before) {
+    content: attr(data-icon);
+    @apply shrink-0 text-lg;
+  }
+</style>

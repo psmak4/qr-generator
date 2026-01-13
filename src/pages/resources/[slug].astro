@@ -1,0 +1,89 @@
+---
+import CTA from '../../components/CTA.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const resources = await getCollection('resources');
+  return resources.map(resource => ({
+    params: { slug: resource.slug },
+    props: { resource },
+  }));
+}
+
+const { resource } = Astro.props;
+const { Content } = await resource.render();
+
+const categoryLabels = {
+  guides: 'Guide',
+  'use-cases': 'Use Case',
+  'best-practices': 'Best Practices',
+  faq: 'FAQ',
+};
+---
+
+<MainLayout 
+  title={`${resource.data.title} | QR Generator Resources`}
+  description={resource.data.description}
+>
+  <article class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm text-(--color-text-muted)">
+      <a href="/resources" class="hover:text-(--color-primary)">Resources</a>
+      <span class="mx-2">/</span>
+      <a href={`/resources#${resource.data.category}`} class="hover:text-(--color-primary)">
+        {categoryLabels[resource.data.category]}
+      </a>
+      <span class="mx-2">/</span>
+      <span class="text-(--color-text-primary)">{resource.data.title}</span>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="mb-8">
+      <div class="mb-4 flex flex-wrap gap-2">
+        <span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/50 dark:text-blue-200">
+          {categoryLabels[resource.data.category]}
+        </span>
+        {resource.data.tags.map(tag => (
+          <span class="rounded-full bg-(--color-hover) px-3 py-1 text-xs text-(--color-text-muted)">
+            {tag}
+          </span>
+        ))}
+      </div>
+      
+      <h1 class="mb-4 text-4xl font-bold text-(--color-text-primary)">
+        {resource.data.title}
+      </h1>
+      
+      <div class="flex items-center gap-4 text-sm text-(--color-text-muted)">
+        <span>By {resource.data.author}</span>
+        <span>•</span>
+        <time datetime={new Date(resource.data.publishDate).toISOString()}>
+          {new Date(resource.data.publishDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: 'UTC'
+          })}
+        </time>
+      </div>
+    </header>
+
+    {resource.data.image && (
+      <img 
+        src={resource.data.image} 
+        alt={resource.data.title}
+        class="mb-8 aspect-3/2 rounded-lg object-cover"
+      />
+    )}
+
+    <!-- Article Content -->
+    <div class="article-content prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-(--color-text-primary) prose-p:text-(--color-text-secondary) prose-a:text-(--color-primary) prose-strong:text-(--color-text-primary) prose-code:text-(--color-primary) prose-blockquote:border-l-(--color-primary) prose-li:text-(--color-text-secondary)">
+      <Content />
+    </div>
+  </article>
+
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <CTA />
+  </div>
+</MainLayout>

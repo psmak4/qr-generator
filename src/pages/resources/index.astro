@@ -1,0 +1,112 @@
+---
+import CTA from '../../components/CTA.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allResources = await getCollection('resources');
+
+// Group by category
+const categories = {
+  guides: allResources.filter(r => r.data.category === 'guides'),
+  'use-cases': allResources.filter(r => r.data.category === 'use-cases'),
+  'best-practices': allResources.filter(r => r.data.category === 'best-practices'),
+  faq: allResources.filter(r => r.data.category === 'faq'),
+};
+
+const categoryLabels: Record<string, string> = {
+  guides: 'Guides',
+  'use-cases': 'Use Cases',
+  'best-practices': 'Best Practices',
+  faq: 'FAQ',
+};
+---
+
+<MainLayout 
+  title="QR Code Resources | Guides, Use Cases & Best Practices"
+  description="Comprehensive resources on QR codes including how-to guides, real-world use cases, and industry best practices."
+>
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="mb-12 text-center">
+      <h1 class="mb-4 text-4xl font-bold text-(--color-text-primary)">
+        QR Code Resources
+      </h1>
+      <p class="mx-auto max-w-2xl text-lg text-(--color-text-muted)">
+        Everything you need to know about creating and using QR codes effectively. 
+        From practical guides to real-world examples.
+      </p>
+    </div>
+
+    <!-- Category Navigation -->
+    <div class="mb-12 flex flex-wrap justify-center gap-4">
+      <a 
+        href="#guides" 
+        class="rounded-lg border border-(--color-border) px-6 py-2 hover:border-(--color-primary) hover:bg-blue-50 dark:hover:bg-blue-950/30"
+      >
+        Guides
+      </a>
+      <a 
+        href="#use-cases" 
+        class="rounded-lg border border-(--color-border) px-6 py-2 hover:border-(--color-primary) hover:bg-blue-50 dark:hover:bg-blue-950/30"
+      >
+        Use Cases
+      </a>
+      <a 
+        href="#best-practices" 
+        class="rounded-lg border border-(--color-border) px-6 py-2 hover:border-(--color-primary) hover:bg-blue-50 dark:hover:bg-blue-950/30"
+      >
+        Best Practices
+      </a>
+      <a 
+        href="#faq" 
+        class="rounded-lg border border-(--color-border) px-6 py-2 hover:border-(--color-primary) hover:bg-blue-50 dark:hover:bg-blue-950/30"
+      >
+        FAQ
+      </a>
+    </div>
+
+    <!-- Resources by Category -->
+    {Object.entries(categories).map(([categoryKey, resources]) => (
+      resources.length > 0 && (
+        <section id={categoryKey} class="mb-16">
+          <h2 class="mb-6 text-2xl font-bold text-(--color-text-primary)">
+            {categoryLabels[categoryKey]}
+          </h2>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {resources.map((resource) => (
+              <a 
+                href={`/resources/${resource.slug}`}
+                class="group rounded-lg border border-(--color-border) p-6 transition-all hover:border-(--color-primary) hover:shadow-lg"
+              >
+                {resource.data.image && (
+                  <img 
+                    src={resource.data.image} 
+                    alt={resource.data.title}
+                    class="mb-4 aspect-3/2 rounded object-cover"
+                  />
+                )}
+                <h3 class="mb-2 text-lg font-semibold text-(--color-text-primary) group-hover:text-(--color-primary)">
+                  {resource.data.title}
+                </h3>
+                <p class="mb-4 text-sm text-(--color-text-muted)">
+                  {resource.data.description}
+                </p>
+                <div class="flex items-center justify-between text-xs text-(--color-text-muted)">
+                  <span>{resource.data.publishDate.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    timeZone: 'UTC'
+                  })}</span>
+                  <span class="text-(--color-primary)">Read more →</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    ))}
+
+    <CTA />
+  </div>
+</MainLayout>
