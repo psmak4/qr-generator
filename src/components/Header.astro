@@ -3,19 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQrcode } from '@fortawesome/free-solid-svg-icons';
 ---
 
-<header class="border-b border-(--color-border) bg-(--color-background) sticky top-0 z-50">
+<header class="border-b border-(--color-border) bg-(--color-background)">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
+    <div class="flex flex-col md:flex-row h-24 md:h-16 items-center justify-center md:justify-between gap-2">
       <a href="/" class="flex items-center gap-2 text-2xl font-semibold">
         <FontAwesomeIcon icon={faQrcode} className="h-6 w-6 text-blue-600" />
         <span>The Best QR Generator</span>
       </a>
       
       <nav class="flex items-center gap-6">
-        <a href="/" class="text-lg font-medium hover:text-(--color-primary)">Home</a>
-        <a href="/resources" class="text-lg font-medium hover:text-(--color-primary)">Resources</a>
-        <a href="/about" class="text-lg font-medium hover:text-(--color-primary)">About</a>
-        <a href="/contact" class="text-lg font-medium hover:text-(--color-primary)">Contact Us</a>
+        <a href="/" class="text-base font-medium hover:text-(--color-primary)">Home</a>
+        <a href="/resources" class="text-base font-medium hover:text-(--color-primary)">Resources</a>
+        <a href="/about" class="text-base font-medium hover:text-(--color-primary)">About</a>
+        <a href="/contact" class="text-base font-medium hover:text-(--color-primary)">Contact Us</a>
       </nav>
     </div>
   </div>

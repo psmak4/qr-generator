@@ -1,56 +1,48 @@
 ---
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQrcode } from '@fortawesome/free-solid-svg-icons';
 import ThemeToggle from './ThemeToggle';
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="mt-auto border-t border-(--color-border) bg-(--color-surface)">
-  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl px-4 py-6 lg:py-4 flex flex-col gap-6 lg:gap-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row justify-center lg:justify-between gap-6 items-center">
+      <a href="/" class="flex items-center gap-2 text-xl font-bold text-(--color-text-primary)">
+        <FontAwesomeIcon icon={faQrcode} className="h-6 w-6 text-blue-600" />
+        The Best QR Generator
+      </a>
+
+      <nav class="flex flex-wrap justify-center items-center space-x-4">
+        <a href="/" class="text-sm text-(--color-text-secondary) hover:text-(--color-text-primary) hover:underline">
+          Home
+        </a>
+        <a href="/resources" class="text-sm text-(--color-text-secondary) hover:text-(--color-text-primary) hover:underline">
+          Resources
+        </a>
+        <a href="/about" class="text-sm text-(--color-text-secondary) hover:text-(--color-text-primary) hover:underline">
+          About
+        </a>
+        <a href="/contact" class="text-sm text-(--color-text-secondary) hover:text-(--color-text-primary) hover:underline text-nowrap">
+          Contact Us
+        </a>
+        <a href="/privacy" class="text-sm text-(--color-text-secondary) hover:text-(--color-text-primary) hover:underline text-nowrap">
+          Privacy Policy
+        </a>
+        <a href="/terms" class="text-sm text-(--color-text-secondary) hover:text-(--color-text-primary) hover:underline text-nowrap">
+          Terms of Service
+        </a>
+      </nav>
+    </div>
+
+    <hr class="hidden lg:block border-(--color-border)" />
+    
     <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
       <p class="text-sm text-(--color-text-secondary)">
         © {currentYear} The Best QR Generator. All rights reserved.
       </p>
       
-      <div class="flex flex-col items-center gap-6 lg:flex-row">
-        <nav class="flex gap-6">
-          <a
-            href="/"
-            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary)"
-          >
-            Home
-          </a>
-          <a
-            href="/resources"
-            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary)"
-          >
-            Resources
-          </a>
-          <a
-            href="/about"
-            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary)"
-          >
-            About
-          </a>
-          <a
-            href="/contact"
-            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary) text-nowrap"
-          >
-            Contact Us
-          </a>
-          <a
-            href="/privacy"
-            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary) text-nowrap"
-          >
-            Privacy Policy
-          </a>
-          <a
-            href="/terms"
-            class="text-sm text-(--color-text-secondary) no-underline hover:text-(--color-text-primary) text-nowrap"
-          >
-            Terms of Service
-          </a>
-        </nav>
-        <ThemeToggle client:load />
-      </div>
+      <ThemeToggle client:load />
     </div>
   </div>
 </footer>
