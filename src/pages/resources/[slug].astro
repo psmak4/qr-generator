@@ -56,8 +56,6 @@ const categoryLabels = {
       </h1>
       
       <div class="flex items-center gap-4 text-sm text-(--color-text-muted)">
-        <span>By {resource.data.author}</span>
-        <span>•</span>
         <time datetime={new Date(resource.data.publishDate).toISOString()}>
           {new Date(resource.data.publishDate).toLocaleDateString('en-US', {
             year: 'numeric',
