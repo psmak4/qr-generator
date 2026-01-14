@@ -1,10 +1,10 @@
 ---
+import CTA from '../components/CTA.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="About | QR Generator">
-  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-4xl px-4 pt-8 pb-12">
+    <div class="mx-auto max-w-4xl my-16">
       <h1 class="text-4xl md:text-5xl font-bold text-(--color-text-primary) mb-4 text-center">About The Best QR Generator</h1>
       
       <div class="space-y-10 text-(--color-text-secondary)">
@@ -34,5 +34,6 @@ import MainLayout from '../layouts/MainLayout.astro';
         </section>
       </div>
     </div>
-  </div>
+
+    <CTA />
 </MainLayout>

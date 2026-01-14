@@ -25,9 +25,8 @@ const categoryLabels: Record<string, string> = {
   title="QR Code Resources | Guides, Use Cases & Best Practices"
   description="Comprehensive resources on QR codes including how-to guides, real-world use cases, and industry best practices."
 >
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <!-- Header -->
-    <div class="mb-12 text-center">
+    <div class="my-16 text-center">
       <h1 class="mb-4 text-4xl font-bold text-(--color-text-primary)">
         QR Code Resources
       </h1>
@@ -38,7 +37,7 @@ const categoryLabels: Record<string, string> = {
     </div>
 
     <!-- Category Navigation -->
-    <div class="mb-12 flex flex-wrap justify-center gap-4">
+    <div class="mb-16 flex flex-wrap justify-center gap-4">
       <a 
         href="#guides" 
         class="rounded-lg border border-(--color-border) px-6 py-2 hover:border-(--color-primary) hover:bg-blue-50 dark:hover:bg-blue-950/30"
@@ -76,7 +75,7 @@ const categoryLabels: Record<string, string> = {
             {resources.map((resource) => (
               <a 
                 href={`/resources/${resource.slug}`}
-                class="group rounded-lg border border-(--color-border) p-6 transition-all hover:border-(--color-primary) hover:shadow-lg"
+                class="group rounded-lg border border-(--color-border) p-6 transition-all hover:shadow-lg"
               >
                 {resource.data.image && (
                   <img 
@@ -108,5 +107,4 @@ const categoryLabels: Record<string, string> = {
     ))}
 
     <CTA />
-  </div>
 </MainLayout>
