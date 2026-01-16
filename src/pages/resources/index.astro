@@ -3,19 +3,11 @@ import CTA from '../../components/CTA.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
 
-const allResources = await getCollection('resources');
+const resources = (await getCollection('resources')).sort((a, b) => a.data.publishDate < b.data.publishDate ? 1 : -1);
 
-// Group by category
-const categories = {
-  guides: allResources.filter(r => r.data.category === 'guides'),
-  'use-cases': allResources.filter(r => r.data.category === 'use-cases'),
-  'best-practices': allResources.filter(r => r.data.category === 'best-practices'),
-  faq: allResources.filter(r => r.data.category === 'faq'),
-};
-
-const categoryLabels: Record<string, string> = {
-  guides: 'Guides',
-  'use-cases': 'Use Cases',
+const categoryLabels = {
+  guides: 'Guide',
+  'use-cases': 'Use Case',
   'best-practices': 'Best Practices',
   faq: 'FAQ',
 };
@@ -36,41 +28,7 @@ const categoryLabels: Record<string, string> = {
       </p>
     </div>
 
-    <!-- Category Navigation -->
-    <div class="mb-16 flex flex-wrap justify-center gap-4">
-      <a 
-        href="#guides" 
-        class="rounded-lg border border-(--color-border) px-6 py-2 hover:border-(--color-primary) hover:bg-blue-50 dark:hover:bg-blue-950/30"
-      >
-        Guides
-      </a>
-      <a 
-        href="#use-cases" 
-        class="rounded-lg border border-(--color-border) px-6 py-2 hover:border-(--color-primary) hover:bg-blue-50 dark:hover:bg-blue-950/30"
-      >
-        Use Cases
-      </a>
-      <a 
-        href="#best-practices" 
-        class="rounded-lg border border-(--color-border) px-6 py-2 hover:border-(--color-primary) hover:bg-blue-50 dark:hover:bg-blue-950/30"
-      >
-        Best Practices
-      </a>
-      <a 
-        href="#faq" 
-        class="rounded-lg border border-(--color-border) px-6 py-2 hover:border-(--color-primary) hover:bg-blue-50 dark:hover:bg-blue-950/30"
-      >
-        FAQ
-      </a>
-    </div>
-
-    <!-- Resources by Category -->
-    {Object.entries(categories).map(([categoryKey, resources]) => (
-      resources.length > 0 && (
-        <section id={categoryKey} class="mb-16">
-          <h2 class="mb-6 text-2xl font-bold text-(--color-text-primary)">
-            {categoryLabels[categoryKey]}
-          </h2>
+        <section class="mb-16">
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {resources.map((resource) => (
               <a 
@@ -91,20 +49,21 @@ const categoryLabels: Record<string, string> = {
                   {resource.data.description}
                 </p>
                 <div class="flex items-center justify-between text-xs text-(--color-text-muted)">
-                  <span>{resource.data.publishDate.toLocaleDateString('en-US', { 
+                  {/* <span>{resource.data.publishDate.toLocaleDateString('en-US', { 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric',
                     timeZone: 'UTC'
-                  })}</span>
+                  })}</span> */}
+                  <span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/50 dark:text-blue-200">
+                    {categoryLabels[resource.data.category]}
+                  </span>
                   <span class="text-(--color-primary)">Read more →</span>
                 </div>
               </a>
             ))}
           </div>
         </section>
-      )
-    ))}
 
     <CTA />
 </MainLayout>
