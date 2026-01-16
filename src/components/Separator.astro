@@ -1,0 +1,23 @@
+---
+// components/Separator.astro
+interface Props {
+  orientation?: 'horizontal' | 'vertical'
+  class?: string
+}
+
+const { 
+  orientation = 'horizontal',
+  class: className = ''
+} = Astro.props
+---
+
+<div class:list={["mx-auto max-w-xl", className]}>
+    <hr
+        class:list={[
+            "shrink-0 border border-(--color-border)/50",
+            orientation === 'horizontal' 
+            ? "h-px w-full" 
+            : "h-full w-px",
+        ]}
+    />
+</div>

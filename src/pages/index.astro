@@ -2,7 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import QRGenerator from '../components/QRGenerator';
 import HomePageDetailedContent from '../components/HomePageDetailedContent.astro';
-import CTA from '../components/CTA.astro';
+import Separator from '../components/Separator.astro';
 ---
 
 <MainLayout 
@@ -29,12 +29,14 @@ import CTA from '../components/CTA.astro';
         </p>
       </div>
     </section>
+
+    <Separator class="mb-16" />
     
     <!-- React island: only this component gets hydrated -->
     <QRGenerator client:load />
+
+    <Separator class="mt-16" />
     
     <!-- Detailed content as static HTML -->
     <HomePageDetailedContent />
-
-    <CTA />
 </MainLayout>

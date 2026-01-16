@@ -4,6 +4,8 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import CTA from '../components/CTA.astro';
+import Separator from '../components/Separator.astro';
 
 // Prevent Font Awesome from adding its own CSS since we imported it manually
 config.autoAddCss = false;
@@ -120,10 +122,15 @@ const {
       <main class="flex-1">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <slot />
+
+          <Separator class="mb-16" />
+
+          <CTA />
         </div>
       </main>
       <Footer />
     </div>
+
     <script>
       // Theme initialization (runs immediately to prevent flash)
       let theme = localStorage.getItem('theme');
